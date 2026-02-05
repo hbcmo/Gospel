@@ -362,10 +362,7 @@ export default function Page() {
             <div className="relative">
               <GodScene />
             </div>
-            <div className="flex items-center gap-2">
-              <CrownIcon />
-              <span className="text-2xl font-serif font-bold text-amber-950">God</span>
-            </div>
+            <span className="text-2xl font-serif font-bold text-amber-950">God</span>
             <div className="flex gap-4">
               {stagePage > 0 && (
                 <button onClick={prevPage} className="px-6 py-2 bg-amber-200 hover:bg-amber-300 text-amber-900 font-serif border-2 border-amber-300">
@@ -391,6 +388,7 @@ export default function Page() {
             <div className="relative">
               <ManScene />
             </div>
+            <span className="text-2xl font-serif font-bold text-red-900">Man</span>
             <div className="flex gap-4">
               {stagePage > 0 && (
                 <button onClick={prevPage} className="px-6 py-2 bg-red-200 hover:bg-red-300 text-red-900 font-serif border-2 border-red-300">
@@ -416,6 +414,7 @@ export default function Page() {
             <div className="relative">
               <JesusScene />
             </div>
+            <span className="text-2xl font-serif font-bold text-blue-900">Jesus</span>
             <div className="flex gap-4">
               {stagePage > 0 && (
                 <button onClick={prevPage} className="px-6 py-2 bg-blue-200 hover:bg-blue-300 text-blue-900 font-serif border-2 border-blue-300">
@@ -441,6 +440,7 @@ export default function Page() {
             <div className="relative">
               <InvitationScene />
             </div>
+            <span className="text-2xl font-serif font-bold text-green-900">Invitation</span>
             <div className="flex gap-4">
               {stagePage > 0 && (
                 <button onClick={prevPage} className="px-6 py-2 bg-green-200 hover:bg-green-300 text-green-900 font-serif border-2 border-green-300">
@@ -466,6 +466,7 @@ export default function Page() {
             <div className="relative">
               <PrayerScene />
             </div>
+            <span className="text-2xl font-serif font-bold text-amber-900">Prayer</span>
             <div className="flex gap-4">
               {stagePage > 0 && (
                 <button onClick={prevPage} className="px-6 py-2 bg-amber-200 hover:bg-amber-300 text-amber-900 font-serif border-2 border-amber-300">
