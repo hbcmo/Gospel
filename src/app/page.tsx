@@ -90,8 +90,39 @@ const OpenDoorIcon = () => (
 );
 
 // Scene illustrations for each stage
+// Intro scene - hands reaching toward light
+const IntroScene = () => (
+  <svg viewBox="0 0 320 200" className="w-full max-w-2xl max-h-32 mx-auto mb-2">
+    <defs>
+      <radialGradient id="introLight">
+        <stop offset="0%" stopColor="#fef3c7" />
+        <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.3" />
+      </radialGradient>
+    </defs>
+    <circle cx="160" cy="60" r="50" fill="url(#introLight)" />
+    <circle cx="160" cy="60" r="45" fill="none" stroke="#fbbf24" strokeWidth="2" opacity="0.6" />
+    <!-- Left hand reaching up -->
+    <g transform="translate(80,120)" stroke="#111827" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="0" cy="0" r="4" />
+      <path d="M 0 0 L 0 -30" />
+      <path d="M -8 -10 L 0 -30 L 8 -10" />
+      <path d="M 0 0 L -8 10" />
+      <path d="M 0 0 L 8 10" />
+    </g>
+    <!-- Right hand reaching up -->
+    <g transform="translate(240,120)" stroke="#111827" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="0" cy="0" r="4" />
+      <path d="M 0 0 L 0 -30" />
+      <path d="M -8 -10 L 0 -30 L 8 -10" />
+      <path d="M 0 0 L -8 10" />
+      <path d="M 0 0 L 8 10" />
+    </g>
+    <text x="160" y="180" fontFamily="serif" fontSize="14" fill="#111827" textAnchor="middle">The Gospel Message</text>
+  </svg>
+);
+
 const GodScene = () => (
-  <svg viewBox="0 0 320 180" className="w-full max-w-2xl max-h-16 mx-auto mb-2">
+  <svg viewBox="0 0 320 180" className="w-full max-w-2xl max-h-32 mx-auto mb-2">
     <g stroke="#111827" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <path d="M 0 120 L 320 120 L 320 160 L 0 160 Z" />
       <path d="M 0 160 L 320 160" />
@@ -111,7 +142,7 @@ const GodScene = () => (
 );
 
 const ManScene = () => (
-  <svg viewBox="0 0 320 220" className="w-full max-w-2xl max-h-24 mx-auto mb-2">
+  <svg viewBox="0 0 320 220" className="w-full max-w-2xl max-h-32 mx-auto mb-2">
     <g stroke="#111827" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <path d="M 0 120 L 110 120 L 140 160 L 0 160 Z" />
       <path d="M 210 120 L 320 120 L 320 160 L 180 160 Z" />
@@ -135,7 +166,7 @@ const ManScene = () => (
 );
 
 const JesusScene = () => (
-  <svg viewBox="0 0 320 220" className="w-full max-w-2xl max-h-24 mx-auto mb-2">
+  <svg viewBox="0 0 320 220" className="w-full max-w-2xl max-h-32 mx-auto mb-2">
     <g stroke="#111827" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <path d="M 0 120 L 110 120 L 140 160 L 0 160 Z" />
       <path d="M 210 120 L 320 120 L 320 160 L 180 160 Z" />
@@ -157,7 +188,7 @@ const JesusScene = () => (
 );
 
 const InvitationScene = () => (
-  <svg viewBox="0 0 320 220" className="w-full max-w-2xl max-h-24 mx-auto mb-2">
+  <svg viewBox="0 0 320 220" className="w-full max-w-2xl max-h-32 mx-auto mb-2">
     <g stroke="#111827" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <path d="M 0 120 L 110 120 L 140 160 L 0 160 Z" />
       <path d="M 210 120 L 320 120 L 320 160 L 180 160 Z" />
@@ -189,14 +220,14 @@ const InvitationScene = () => (
 );
 
 const PrayerScene = () => (
-  <svg viewBox="0 0 320 180" className="w-full max-w-2xl max-h-16 mx-auto mb-2">
+  <svg viewBox="0 0 320 220" className="w-full max-w-2xl max-h-32 mx-auto mb-2">
     <g stroke="#111827" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <path d="M 0 120 L 110 120 L 140 160 L 0 160 Z" />
       <path d="M 210 120 L 320 120 L 320 160 L 180 160 Z" />
       <path d="M 0 160 L 320 160" />
     </g>
-    <g stroke="#111827" strokeWidth="3" fill="none" strokeLinecap="round">
-      <path d="M 160 90 L 160 180">
+    <g stroke="#8b4513" strokeWidth="5" fill="none" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M 160 60 L 160 210">
         <animate attributeName="opacity" values="1;0.7;1" dur="3s" repeatCount="indefinite" />
       </path>
       <path d="M 110 120 L 210 120">
@@ -206,16 +237,16 @@ const PrayerScene = () => (
     <g transform="translate(60,58)" stroke="#111827" strokeWidth="2" fill="none" strokeLinecap="round">
       <circle cx="20" cy="8" r="6" />
       <path d="M 20 14 L 20 34" />
-      <path d="M 20 14 L 16 24 M 20 14 L 24 24 M 16 24 L 24 24" />
+      <path d="M 12 22 L 28 22" />
       <path d="M 20 34 L 12 48" />
       <path d="M 20 34 L 28 48" />
       <animateTransform attributeName="transform" type="translate" values="60,58; 60,60; 60,58" dur="2s" repeatCount="indefinite" />
     </g>
     <text x="18" y="112" fontFamily="serif" fontSize="14" fill="#111827">God</text>
     <text x="230" y="112" fontFamily="serif" fontSize="14" fill="#111827">Man</text>
-    <text x="136" y="152" fontFamily="serif" fontSize="12" fill="#111827">Christ</text>
+    <text x="138" y="152" fontFamily="serif" fontSize="12" fill="#111827">Christ</text>
   </svg>
-);
+>;
 
 // Presenter photo avatar
 const PreacherAvatar = () => (
@@ -349,6 +380,7 @@ export default function Page() {
           <div className="text-center space-y-4 animate-fade-in">
             <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-4 sm:p-6 rounded-sm">
               <div className="space-y-3">
+                <IntroScene />
                 <PreacherAvatar />
                 <h1 className="text-2xl sm:text-4xl font-serif font-bold text-amber-950">Hey there, friend</h1>
                 <p className="text-base sm:text-lg text-gray-700 font-serif leading-relaxed">
@@ -394,6 +426,7 @@ export default function Page() {
                 {/* Page 1: Scripture and Attributes */}
                 {stagePage === 1 && (
                   <div className="space-y-4 flex flex-col flex-1">
+                    <CrownIcon />
                     <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">God's Attributes</h2>
                     <div className="w-16 h-1 bg-amber-800 mx-auto"></div>
                     
