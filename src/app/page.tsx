@@ -431,91 +431,72 @@ export default function Page() {
 
         {/* Stage 2: Who is Man */}
         {stage === 'man' && (
-          <div className="space-y-8 animate-fade-in">
-            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-8 rounded-sm">
-              <div className="space-y-6">
-                <ManScene />
-                <BrokenHeartIcon />
-                <h2 className="text-4xl font-serif font-bold mb-6 text-center text-amber-950">Who is Man?</h2>
-                <div className="w-24 h-1 bg-amber-800 mx-auto mb-6"></div>
+          <div className="space-y-4 animate-fade-in h-full flex flex-col">
+            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-6 rounded-sm flex-1 flex flex-col">
+              <div className="space-y-4 flex-1 flex flex-col">
+                {/* Page 0: Intro with Scene */}
+                {stagePage === 0 && (
+                  <div className="space-y-4 flex flex-col flex-1">
+                    <ManScene />
+                    <BrokenHeartIcon />
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">Who is Man?</h2>
+                    <div className="w-16 h-1 bg-amber-800 mx-auto"></div>
 
-                <p className="text-lg leading-relaxed font-serif text-gray-800 italic">
-                  "But that perfect fellowship was shattered. Humanity chose to rebel against God—and sin entered the world, creating a chasm between us and Him."
-                </p>
-                
-                <div className="border-l-4 border-red-800 pl-6 py-2 bg-red-50">
-                  <p className="italic text-gray-700 font-serif">
-                    "All have sinned and fall short of the glory of God."
-                  </p>
-                  <p className="text-sm text-red-800 mt-2 font-serif">— Romans 3:23</p>
-                </div>
+                    <p className="text-lg sm:text-xl leading-relaxed font-serif text-gray-800 italic flex-1">
+                      "But that perfect fellowship was shattered. Humanity chose to rebel against God—and sin entered the world, creating a chasm between us and Him."
+                    </p>
+                    
+                    <p className="text-lg sm:text-xl leading-relaxed font-serif text-gray-700">
+                      Sin isn't just bad actions—it's a broken condition in all of us that separates us from God.
+                    </p>
+                  </div>
+                )}
 
-                <p className="text-lg leading-relaxed font-serif text-gray-700">
-                  Look at the illustration—there's now a great divide. Sin isn't just a list of bad things we do—it's a broken condition in all of us that separates us from God. We're born wanting to do things our way instead of His way. No bridge, no ladder, no amount of good works can cross that chasm.
-                </p>
-
-                <div className="bg-red-50 border-2 border-red-200 p-6">
-                  <p className="text-lg leading-relaxed font-serif text-gray-800">
-                    Because God is perfectly just, He can't ignore sin. And the consequence is severe: <strong className="text-red-900">eternal separation from God</strong>. We can't fix this ourselves—good works don't erase sin, religion doesn't help, and self-improvement falls short. We're spiritually dead without God's help.
-                  </p>
-                </div>
-
-                <div className="border-l-4 border-red-800 pl-6 py-2 bg-red-50">
-                  <p className="italic text-gray-700 font-serif">
-                    "The wages of sin is death, but the free gift of God is eternal life in Christ Jesus our Lord."
-                  </p>
-                  <p className="text-sm text-red-800 mt-2 font-serif">— Romans 6:23</p>
-                </div>
-
-                {/* Learn More Section */}
-                <div className="border-t-2 border-amber-300 pt-6 mt-6">
-                  <button
-                    onClick={() => toggleSection('man-more')}
-                    className="text-amber-900 hover:text-amber-700 font-serif font-semibold flex items-center gap-2 mx-auto"
-                  >
-                    {expandedSections['man-more'] ? '− Less Detail' : '+ Learn More'} about sin and its consequences
-                  </button>
-                  {expandedSections['man-more'] && (
-                    <div className="mt-4 space-y-4 text-gray-700 animate-fade-in font-serif bg-amber-50 p-6 border border-amber-200">
-                      <div>
-                        <p className="mb-2"><strong className="text-red-900">We're Born Into It:</strong> Sin isn't just what we do—it's a broken condition we inherit.</p>
-                        <div className="border-l-4 border-red-600 pl-4 py-2 bg-white italic text-sm">
-                          <p>"Therefore, just as sin came into the world through one man, and death through sin, and so death spread to all men because all sinned."</p>
-                          <p className="text-red-800 mt-1">— Romans 5:12</p>
-                        </div>
-                      </div>
-                      <div>
-                        <p className="mb-2"><strong className="text-red-900">It Affects Everything:</strong> Sin touches our thoughts, desires, and actions. We can't fix ourselves.</p>
-                        <div className="border-l-4 border-red-600 pl-4 py-2 bg-white italic text-sm">
-                          <p>"The heart is deceitful above all things, and desperately sick; who can understand it?"</p>
-                          <p className="text-red-800 mt-1">— Jeremiah 17:9</p>
-                        </div>
-                      </div>
-                      <div>
-                        <p className="mb-2"><strong className="text-red-900">No DIY Fix:</strong> Good deeds don't cancel out sin. God's standard is perfection.</p>
-                        <div className="border-l-4 border-red-600 pl-4 py-2 bg-white italic text-sm">
-                          <p>"We have all become like one who is unclean, and all our righteous deeds are like a polluted garment."</p>
-                          <p className="text-red-800 mt-1">— Isaiah 64:6</p>
-                        </div>
-                      </div>
-                      <div>
-                        <p className="mb-2"><strong className="text-red-900">The Consequence:</strong> Sin separates us from God, and separation from God means spiritual death.</p>
-                        <div className="border-l-4 border-red-600 pl-4 py-2 bg-white italic text-sm">
-                          <p>"For the wages of sin is death, but the free gift of God is eternal life in Christ Jesus our Lord."</p>
-                          <p className="text-red-800 mt-1">— Romans 6:23</p>
-                        </div>
-                      </div>
+                {/* Page 1: Scripture and Consequences */}
+                {stagePage === 1 && (
+                  <div className="space-y-4 flex flex-col flex-1">
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">The Consequence of Sin</h2>
+                    <div className="w-16 h-1 bg-red-800 mx-auto"></div>
+                    
+                    <div className="border-l-4 border-red-800 pl-6 py-3 bg-red-50 flex-1">
+                      <p className="italic text-gray-700 font-serif text-lg sm:text-xl">
+                        "All have sinned and fall short of the glory of God."
+                      </p>
+                      <p className="text-lg text-red-800 mt-3 font-serif">— Romans 3:23</p>
                     </div>
-                  )}
-                </div>
 
-                <div className="flex justify-center mt-8">
-                  <button
-                    onClick={nextStage}
-                    className="px-10 py-4 bg-amber-900 text-amber-50 font-serif text-lg hover:bg-amber-800 transition-all shadow-lg flex items-center gap-2 border-2 border-amber-950"
-                  >
-                    Continue <ChevronRight />
-                  </button>
+                    <p className="text-lg sm:text-xl leading-relaxed font-serif text-gray-700">
+                      Because God is perfectly just, He can't ignore sin. And the consequence is severe: <strong className="text-red-900">eternal separation from God</strong>. We're spiritually dead without God's help.
+                    </p>
+                  </div>
+                )}
+
+                {/* Navigation Buttons */}
+                <div className="flex gap-3 mt-6">
+                  {stagePage > 0 && (
+                    <button
+                      onClick={prevPage}
+                      className="flex-1 px-6 py-3 bg-red-200 hover:bg-red-300 text-red-900 font-serif transition-all border-2 border-red-300"
+                    >
+                      ← Back
+                    </button>
+                  )}
+                  {stagePage < 1 && (
+                    <button
+                      onClick={nextPage}
+                      className="flex-1 px-6 py-3 bg-red-900 hover:bg-red-800 text-red-50 font-serif transition-all border-2 border-red-950"
+                    >
+                      Next →
+                    </button>
+                  )}
+                  {stagePage === 1 && (
+                    <button
+                      onClick={nextStage}
+                      className="flex-1 px-6 py-3 bg-red-900 hover:bg-red-800 text-red-50 font-serif transition-all border-2 border-red-950"
+                    >
+                      Continue →
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
@@ -524,91 +505,72 @@ export default function Page() {
 
         {/* Stage 3: Who is Jesus */}
         {stage === 'jesus' && (
-          <div className="space-y-8 animate-fade-in">
-            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-8 rounded-sm">
-              <div className="space-y-6">
-                <JesusScene />
-                <CrossIcon />
-                <h2 className="text-4xl font-serif font-bold mb-6 text-center text-amber-950">Who is Jesus?</h2>
-                <div className="w-24 h-1 bg-amber-800 mx-auto mb-6"></div>
+          <div className="space-y-4 animate-fade-in h-full flex flex-col">
+            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-6 rounded-sm flex-1 flex flex-col">
+              <div className="space-y-4 flex-1 flex flex-col">
+                {/* Page 0: Intro with Scene */}
+                {stagePage === 0 && (
+                  <div className="space-y-4 flex flex-col flex-1">
+                    <JesusScene />
+                    <CrossIcon />
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">Who is Jesus?</h2>
+                    <div className="w-16 h-1 bg-blue-800 mx-auto"></div>
 
-                <p className="text-lg leading-relaxed font-serif text-gray-800 italic">
-                  "And now for the life-changing part: Jesus is the bridge. God Himself came down as a man to span the chasm we could never cross."
-                </p>
-                
-                <div className="border-l-4 border-blue-800 pl-6 py-2 bg-blue-50">
-                  <p className="italic text-gray-700 font-serif">
-                    "For there is one God, and there is one mediator between God and men, the man Christ Jesus, who gave himself as a ransom for all."
-                  </p>
-                  <p className="text-sm text-blue-800 mt-2 font-serif">— 1 Timothy 2:5-6</p>
-                </div>
+                    <p className="text-lg sm:text-xl leading-relaxed font-serif text-gray-800 italic flex-1">
+                      "And now for the life-changing part: Jesus is the bridge. God Himself came down as a man to span the chasm we could never cross."
+                    </p>
+                    
+                    <p className="text-lg sm:text-xl leading-relaxed font-serif text-gray-700">
+                      Jesus lived the perfect life we couldn't live, then took God's judgment for our sin on the cross.
+                    </p>
+                  </div>
+                )}
 
-                <p className="text-lg leading-relaxed font-serif text-gray-700">
-                  Look at the cross—it's the bridge. Jesus lived the perfect life we couldn't live, then took God's judgment for our sin on the cross. The vertical beam represents His perfect obedience to the Father; the horizontal beam is the bridge He became for us. He died in our place, and three days later rose from the dead, proving He has the power to save.
-                </p>
-
-                <div className="bg-blue-50 border-2 border-blue-200 p-6">
-                  <p className="text-lg leading-relaxed font-serif text-gray-800">
-                    <strong className="text-blue-900">This is substitutionary atonement</strong>—in simple terms, Jesus substituted Himself for you. His perfection gets credited to your account; your sin was placed on Him at the cross. It's the greatest exchange that's ever happened.
-                  </p>
-                </div>
-
-                <div className="border-l-4 border-blue-800 pl-6 py-2 bg-blue-50">
-                  <p className="italic text-gray-700 font-serif">
-                    "He himself bore our sins in his body on the tree, that we might die to sin and live to righteousness."
-                  </p>
-                  <p className="text-sm text-blue-800 mt-2 font-serif">— 1 Peter 2:24</p>
-                </div>
-
-                {/* Learn More Section */}
-                <div className="border-t-2 border-amber-300 pt-6 mt-6">
-                  <button
-                    onClick={() => toggleSection('jesus-more')}
-                    className="text-amber-900 hover:text-amber-700 font-serif font-semibold flex items-center gap-2 mx-auto"
-                  >
-                    {expandedSections['jesus-more'] ? '− Less Detail' : '+ Learn More'} about Jesus and salvation
-                  </button>
-                  {expandedSections['jesus-more'] && (
-                    <div className="mt-4 space-y-4 text-gray-700 animate-fade-in font-serif bg-amber-50 p-6 border border-amber-200">
-                      <div>
-                        <p className="mb-2"><strong className="text-blue-900">Perfect Life:</strong> Jesus lived without sin and fulfilled everything God requires.</p>
-                        <div className="border-l-4 border-blue-600 pl-4 py-2 bg-white italic text-sm">
-                          <p>"For our sake he made him to be sin who knew no sin, so that in him we might become the righteousness of God."</p>
-                          <p className="text-blue-800 mt-1">— 2 Corinthians 5:21</p>
-                        </div>
-                      </div>
-                      <div>
-                        <p className="mb-2"><strong className="text-blue-900">The Payment:</strong> On the cross, He took the penalty we deserved—God's full judgment against sin.</p>
-                        <div className="border-l-4 border-blue-600 pl-4 py-2 bg-white italic text-sm">
-                          <p>"God put forward [Jesus] as a propitiation by his blood, to be received by faith. This was to show God's righteousness, because in his divine forbearance he had passed over former sins."</p>
-                          <p className="text-blue-800 mt-1">— Romans 3:25</p>
-                        </div>
-                      </div>
-                      <div>
-                        <p className="mb-2"><strong className="text-blue-900">Defeated Death:</strong> Three days later, He rose from the dead, proving He has power over sin and death.</p>
-                        <div className="border-l-4 border-blue-600 pl-4 py-2 bg-white italic text-sm">
-                          <p>"When the perishable puts on the imperishable, and the mortal puts on immortality, then shall come to pass the saying that is written: 'Death is swallowed up in victory.' 'O death, where is your victory? O death, where is your sting?' The sting of death is sin, and the power of sin is the law. But thanks be to God, who gives us the victory through our Lord Jesus Christ."</p>
-                          <p className="text-blue-800 mt-1">— 1 Corinthians 15:54-57</p>
-                        </div>
-                      </div>
-                      <div>
-                        <p className="mb-2"><strong className="text-blue-900">The Trade:</strong> His perfection gets credited to us; our sin was placed on Him. It's an incredible exchange.</p>
-                        <div className="border-l-4 border-blue-600 pl-4 py-2 bg-white italic text-sm">
-                          <p>"For our sake he made him to be sin who knew no sin, so that in him we might become the righteousness of God."</p>
-                          <p className="text-blue-800 mt-1">— 2 Corinthians 5:21</p>
-                        </div>
-                      </div>
+                {/* Page 1: The Substitution */}
+                {stagePage === 1 && (
+                  <div className="space-y-4 flex flex-col flex-1">
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">The Greatest Exchange</h2>
+                    <div className="w-16 h-1 bg-blue-800 mx-auto"></div>
+                    
+                    <div className="border-l-4 border-blue-800 pl-6 py-3 bg-blue-50 flex-1">
+                      <p className="italic text-gray-700 font-serif text-lg sm:text-xl">
+                        "He himself bore our sins in his body on the tree, that we might die to sin and live to righteousness."
+                      </p>
+                      <p className="text-lg text-blue-800 mt-3 font-serif">— 1 Peter 2:24</p>
                     </div>
-                  )}
-                </div>
 
-                <div className="flex justify-center mt-8">
-                  <button
-                    onClick={nextStage}
-                    className="px-10 py-4 bg-amber-900 text-amber-50 font-serif text-lg hover:bg-amber-800 transition-all shadow-lg flex items-center gap-2 border-2 border-amber-950"
-                  >
-                    Continue <ChevronRight />
-                  </button>
+                    <p className="text-lg sm:text-xl leading-relaxed font-serif text-gray-700">
+                      <strong className="text-blue-900">Substitutionary atonement</strong>: Jesus substituted Himself for you. His perfection gets credited to your account; your sin was placed on Him. It's the greatest exchange that's ever happened.
+                    </p>
+                  </div>
+                )}
+
+                {/* Navigation Buttons */}
+                <div className="flex gap-3 mt-6">
+                  {stagePage > 0 && (
+                    <button
+                      onClick={prevPage}
+                      className="flex-1 px-6 py-3 bg-blue-200 hover:bg-blue-300 text-blue-900 font-serif transition-all border-2 border-blue-300"
+                    >
+                      ← Back
+                    </button>
+                  )}
+                  {stagePage < 1 && (
+                    <button
+                      onClick={nextPage}
+                      className="flex-1 px-6 py-3 bg-blue-900 hover:bg-blue-800 text-blue-50 font-serif transition-all border-2 border-blue-950"
+                    >
+                      Next →
+                    </button>
+                  )}
+                  {stagePage === 1 && (
+                    <button
+                      onClick={nextStage}
+                      className="flex-1 px-6 py-3 bg-blue-900 hover:bg-blue-800 text-blue-50 font-serif transition-all border-2 border-blue-950"
+                    >
+                      Continue →
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
