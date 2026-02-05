@@ -352,7 +352,7 @@ export default function Page() {
               onClick={nextStage}
               className="px-8 py-4 bg-amber-900 text-amber-50 font-serif text-lg hover:bg-amber-800 transition-all shadow-lg border-2 border-amber-950"
             >
-              Begin
+              Start
             </button>
           </div>
         )}
