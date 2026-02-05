@@ -579,97 +579,70 @@ export default function Page() {
 
         {/* Stage 4: Invitation */}
         {stage === 'invitation' && (
-          <div className="space-y-8 animate-fade-in">
-            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-8 rounded-sm">
-              <div className="space-y-6">
-                <InvitationScene />
-                <OpenDoorIcon />
-                <h2 className="text-4xl font-serif font-bold mb-6 text-center text-amber-950">Will You Receive Christ?</h2>
-                <div className="w-24 h-1 bg-amber-800 mx-auto mb-6"></div>
+          <div className="space-y-4 animate-fade-in h-full flex flex-col">
+            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-6 rounded-sm flex-1 flex flex-col">
+              <div className="space-y-4 flex-1 flex flex-col">
+                {/* Page 0: Intro */}
+                {stagePage === 0 && (
+                  <div className="space-y-4 flex flex-col flex-1">
+                    <InvitationScene />
+                    <OpenDoorIcon />
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">Will You Receive Christ?</h2>
+                    <div className="w-16 h-1 bg-green-800 mx-auto"></div>
 
-                <p className="text-lg leading-relaxed font-serif text-gray-800 italic">
-                  "God offers salvation as a free gift to all who repent and believe in Jesus Christ. The question now, my friend, is this: Will you receive Him?"
-                </p>
-                
-                <div className="border-l-4 border-green-800 pl-6 py-2 bg-green-50">
-                  <p className="italic text-gray-700 font-serif">
-                    "If you confess with your mouth that Jesus is Lord and believe in your heart that God raised him from the dead, you will be saved."
-                  </p>
-                  <p className="text-sm text-green-800 mt-2 font-serif">— Romans 10:9</p>
-                </div>
-
-                <div className="bg-green-50 border-2 border-green-200 p-6 space-y-4 font-serif">
-                  <p className="text-lg text-gray-800"><strong className="text-green-900">Repent:</strong> Turn away from your sin—change your mind about it and turn toward Jesus.</p>
-                  <p className="text-lg text-gray-800"><strong className="text-green-900">Believe:</strong> Trust Jesus completely. He's your only way to God.</p>
-                  <p className="text-lg text-gray-800"><strong className="text-green-900">Receive:</strong> Accept the gift. Ask Jesus to be your Savior and Lord.</p>
-                </div>
-
-                <p className="text-lg leading-relaxed font-serif text-gray-700">
-                  This isn't a casual decision. It means giving control of your life to Jesus, accepting Him as your boss, and following Him going forward. But it's also the best thing you could ever do—it means complete forgiveness, a totally new life, and eternal friendship with God.
-                </p>
-
-                <div className="border-l-4 border-green-800 pl-6 py-2 bg-green-50">
-                  <p className="italic text-gray-700 font-serif">
-                    "For by grace you have been saved through faith. And this is not your own doing; it is the gift of God."
-                  </p>
-                  <p className="text-sm text-green-800 mt-2 font-serif">— Ephesians 2:8</p>
-                </div>
-
-                {/* Learn More Section */}
-                <div className="border-t-2 border-amber-300 pt-6 mt-6">
-                  <button
-                    onClick={() => toggleSection('invitation-more')}
-                    className="text-amber-900 hover:text-amber-700 font-serif font-semibold flex items-center gap-2 mx-auto"
-                  >
-                    {expandedSections['invitation-more'] ? '− Less Detail' : '+ Learn More'} about saving faith
-                  </button>
-                  {expandedSections['invitation-more'] && (
-                    <div className="mt-4 space-y-4 text-gray-700 animate-fade-in font-serif bg-amber-50 p-6 border border-amber-200">
-                      <div>
-                        <p className="mb-2"><strong className="text-green-900">Real Faith:</strong> It's not just agreeing with facts—it's trusting Jesus with your whole life.</p>
-                        <div className="border-l-4 border-green-600 pl-4 py-2 bg-white italic text-sm">
-                          <p>"You believe that God is one; you do well. Even the demons believe—and shudder!"</p>
-                          <p className="text-green-800 mt-1">— James 2:19</p>
-                        </div>
-                      </div>
-                      <div>
-                        <p className="mb-2"><strong className="text-green-900">God Gives the Gift:</strong> You can't manufacture faith on your own. God draws people to Himself.</p>
-                        <div className="border-l-4 border-green-600 pl-4 py-2 bg-white italic text-sm">
-                          <p>"No one can come to me unless the Father who sent me draws him. And I will raise him up on the last day."</p>
-                          <p className="text-green-800 mt-1">— John 6:44</p>
-                        </div>
-                      </div>
-                      <div>
-                        <p className="mb-2"><strong className="text-green-900">Security:</strong> When you truly believe, God commits to completing His work in you forever.</p>
-                        <div className="border-l-4 border-green-600 pl-4 py-2 bg-white italic text-sm">
-                          <p>"And I am sure of this, that he who began a good work in you will bring it to completion at the day of Jesus Christ."</p>
-                          <p className="text-green-800 mt-1">— Philippians 1:6</p>
-                        </div>
-                      </div>
-                      <div>
-                        <p className="mb-2"><strong className="text-green-900">Transformation:</strong> Salvation isn't just about forgiveness—it's about becoming someone new.</p>
-                        <div className="border-l-4 border-green-600 pl-4 py-2 bg-white italic text-sm">
-                          <p>"Therefore, if anyone is in Christ, he is a new creation. The old has passed away; behold, the new has come."</p>
-                          <p className="text-green-800 mt-1">— 2 Corinthians 5:17</p>
-                        </div>
-                      </div>
+                    <p className="text-lg sm:text-xl leading-relaxed font-serif text-gray-800 italic flex-1">
+                      "God offers salvation as a free gift to all who repent and believe in Jesus Christ. The question now, my friend, is this: Will you receive Him?"
+                    </p>
+                    
+                    <div className="border-l-4 border-green-800 pl-6 py-3 bg-green-50">
+                      <p className="italic text-gray-700 font-serif text-lg sm:text-xl">
+                        "If you confess with your mouth that Jesus is Lord and believe in your heart that God raised him from the dead, you will be saved."
+                      </p>
+                      <p className="text-lg text-green-800 mt-3 font-serif">— Romans 10:9</p>
                     </div>
-                  )}
-                </div>
+                  </div>
+                )}
 
-                <div className="flex flex-col gap-3 mt-8">
-                  <button
-                    onClick={nextStage}
-                    className="px-10 py-4 bg-green-900 text-green-50 font-serif text-lg hover:bg-green-800 transition-all shadow-lg flex items-center justify-center gap-2 border-2 border-green-950"
-                  >
-                    Yes, I Want to Receive Christ <Heart />
-                  </button>
-                  <button
-                    onClick={() => setStage('intro')}
-                    className="px-6 py-3 bg-amber-100 hover:bg-amber-200 text-amber-900 font-serif transition-all border-2 border-amber-300"
-                  >
-                    I Need More Time to Consider
-                  </button>
+                {/* Page 1: Three Steps */}
+                {stagePage === 1 && (
+                  <div className="space-y-4 flex flex-col flex-1">
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">Three Steps</h2>
+                    <div className="w-16 h-1 bg-green-800 mx-auto"></div>
+                    
+                    <div className="bg-green-50 border-2 border-green-200 p-4 space-y-3 font-serif flex-1">
+                      <p className="text-lg sm:text-xl text-gray-800"><strong className="text-green-900">1. Repent:</strong> Turn away from your sin and turn toward Jesus.</p>
+                      <p className="text-lg sm:text-xl text-gray-800"><strong className="text-green-900">2. Believe:</strong> Trust Jesus completely. He's your only way to God.</p>
+                      <p className="text-lg sm:text-xl text-gray-800"><strong className="text-green-900">3. Receive:</strong> Accept the gift. Ask Jesus to be your Savior and Lord.</p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Navigation Buttons */}
+                <div className="flex gap-3 mt-6">
+                  {stagePage > 0 && (
+                    <button
+                      onClick={prevPage}
+                      className="flex-1 px-6 py-3 bg-green-200 hover:bg-green-300 text-green-900 font-serif transition-all border-2 border-green-300"
+                    >
+                      ← Back
+                    </button>
+                  )}
+                  {stagePage < 1 && (
+                    <button
+                      onClick={nextPage}
+                      className="flex-1 px-6 py-3 bg-green-900 hover:bg-green-800 text-green-50 font-serif transition-all border-2 border-green-950"
+                    >
+                      Next →
+                    </button>
+                  )}
+                  {stagePage === 1 && (
+                    <button
+                      onClick={nextStage}
+                      className="flex-1 px-6 py-3 bg-green-900 hover:bg-green-800 text-green-50 font-serif flex items-center justify-center gap-2 transition-all border-2 border-green-950"
+                    >
+                      Let's Pray <Heart className="w-4 h-4" />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
@@ -678,61 +651,82 @@ export default function Page() {
 
         {/* Stage 5: Prayer */}
         {stage === 'prayer' && (
-          <div className="space-y-8 animate-fade-in">
-            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-8 rounded-sm">
-              <div className="space-y-6">
-                <PrayerScene />
-                <h2 className="text-4xl font-serif font-bold mb-6 text-center text-amber-950">Prayer of Salvation</h2>
-                <div className="w-24 h-1 bg-amber-800 mx-auto mb-6"></div>
+          <div className="space-y-4 animate-fade-in h-full flex flex-col">
+            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-6 rounded-sm flex-1 flex flex-col">
+              <div className="space-y-4 flex-1 flex flex-col">
+                {/* Page 0: Prayer Text */}
+                {stagePage === 0 && (
+                  <div className="space-y-4 flex flex-col flex-1">
+                    <PrayerScene />
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">Prayer of Salvation</h2>
+                    <div className="w-16 h-1 bg-amber-800 mx-auto"></div>
 
-                <p className="text-lg font-serif text-gray-700 leading-relaxed italic">
-                  "If you're ready to take this step and commit your life to Jesus, you can pray right now. Prayer doesn't save you—only Christ saves—but it's how you express your faith and surrender to Him."
-                </p>
+                    <p className="text-lg sm:text-xl font-serif text-gray-700 leading-relaxed italic flex-1">
+                      "If you're ready to take this step and commit your life to Jesus, you can pray right now. Prayer doesn't save you—only Christ saves—but it's how you express your faith and surrender to Him."
+                    </p>
 
-                <div className="bg-amber-50 border-2 border-amber-800 p-8 space-y-4">
-                  <p className="text-lg italic leading-relaxed font-serif text-gray-800">
-                    "Lord Jesus, I admit that I'm a sinner and can't save myself. I believe You're God's Son, that You died on the cross for my sins, and that You rose from the dead. I'm turning from my sin and putting my trust in You alone. I surrender my life to You. Be my Savior and be my Lord. In Jesus' name, Amen."
-                  </p>
-                </div>
-
-                <div className="bg-green-50 border-2 border-green-700 p-6 space-y-4">
-                  <h3 className="text-2xl font-serif font-bold text-green-900">What Happens Next?</h3>
-                  <div className="space-y-3 font-serif text-gray-800">
-                    <p><strong className="text-green-900">1. Find a Bible-believing church:</strong> You need fellowship with other believers.</p>
-                    <p><strong className="text-green-900">2. Read the Bible daily:</strong> Start with the Gospel of John to learn more about Jesus.</p>
-                    <p><strong className="text-green-900">3. Pray regularly:</strong> Talk to God throughout your day.</p>
-                    <p><strong className="text-green-900">4. Be baptized:</strong> This is an outward sign of your inward faith.</p>
-                    <p><strong className="text-green-900">5. Share your faith:</strong> Tell others about what Christ has done for you.</p>
-                                    <div className="pt-4 border-t-2 border-green-300 mt-4">
-                                      <a 
-                                        href="https://www.9marks.org/church-search/" 
-                                        target="_blank" 
-                                        rel="noopener noreferrer"
-                                        className="inline-block px-6 py-3 bg-green-700 text-white font-serif font-semibold hover:bg-green-800 transition-all rounded"
-                                      >
-                                        Find a Gospel-Centered Church
-                                      </a>
-                                    </div>
+                    <div className="bg-amber-50 border-2 border-amber-800 p-4 space-y-4">
+                      <p className="text-lg sm:text-xl italic leading-relaxed font-serif text-gray-800">
+                        "Lord Jesus, I admit that I'm a sinner and can't save myself. I believe You're God's Son, that You died on the cross for my sins, and that You rose from the dead. I'm turning from my sin and putting my trust in You alone. I surrender my life to You. Be my Savior and be my Lord. In Jesus' name, Amen."
+                      </p>
+                    </div>
                   </div>
+                )}
+
+                {/* Page 1: Next Steps */}
+                {stagePage === 1 && (
+                  <div className="space-y-4 flex flex-col flex-1">
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">What Happens Next?</h2>
+                    <div className="w-16 h-1 bg-green-800 mx-auto"></div>
+                    
+                    <div className="bg-green-50 border-2 border-green-700 p-4 space-y-3 font-serif flex-1 text-gray-800">
+                      <p className="text-lg sm:text-xl"><strong className="text-green-900">1.</strong> Find a Bible-believing church</p>
+                      <p className="text-lg sm:text-xl"><strong className="text-green-900">2.</strong> Read the Bible daily</p>
+                      <p className="text-lg sm:text-xl"><strong className="text-green-900">3.</strong> Pray regularly</p>
+                      <p className="text-lg sm:text-xl"><strong className="text-green-900">4.</strong> Be baptized</p>
+                      <p className="text-lg sm:text-xl"><strong className="text-green-900">5.</strong> Share your faith</p>
+                    </div>
+
+                    <div className="pt-2">
+                      <a 
+                        href="https://www.9marks.org/church-search/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="block text-center px-6 py-3 bg-green-700 text-white font-serif font-semibold hover:bg-green-800 transition-all rounded text-lg"
+                      >
+                        Find a Gospel-Centered Church
+                      </a>
+                    </div>
+                  </div>
+                )}
+
+                {/* Navigation Buttons */}
+                <div className="flex gap-3 mt-6">
+                  {stagePage > 0 && (
+                    <button
+                      onClick={prevPage}
+                      className="flex-1 px-6 py-3 bg-amber-200 hover:bg-amber-300 text-amber-900 font-serif transition-all border-2 border-amber-300"
+                    >
+                      ← Back
+                    </button>
+                  )}
+                  {stagePage < 1 && (
+                    <button
+                      onClick={nextPage}
+                      className="flex-1 px-6 py-3 bg-amber-900 hover:bg-amber-800 text-amber-50 font-serif transition-all border-2 border-amber-950"
+                    >
+                      Next →
+                    </button>
+                  )}
+                  {stagePage === 1 && (
+                    <button
+                      onClick={() => setStage('intro')}
+                      className="flex-1 px-6 py-3 bg-amber-900 hover:bg-amber-800 text-amber-50 font-serif transition-all border-2 border-amber-950"
+                    >
+                      Start Over
+                    </button>
+                  )}
                 </div>
-
-                <div className="border-l-4 border-amber-800 pl-6 py-2 bg-amber-50">
-                  <p className="italic text-gray-700 font-serif">
-                    "Therefore, if anyone is in Christ, he is a new creation. The old has passed away; behold, the new has come."
-                  </p>
-                  <p className="text-sm text-amber-800 mt-2 font-serif">— 2 Corinthians 5:17</p>
-                </div>
-
-                <p className="text-center text-xl font-serif font-bold text-amber-950 pt-4">
-                  Welcome to the family of God!
-                </p>
-
-                <button
-                  onClick={() => setStage('intro')}
-                  className="w-full px-6 py-3 bg-amber-900 text-amber-50 font-serif hover:bg-amber-800 transition-all border-2 border-amber-950"
-                >
-                  Start Over
-                </button>
               </div>
             </div>
           </div>
