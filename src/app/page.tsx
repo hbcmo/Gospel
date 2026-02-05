@@ -215,7 +215,7 @@ const PrayerScene = () => (
 // Presenter photo avatar
 const PreacherAvatar = () => (
   <img
-    src="/images/Spurgeoun.png"
+    src="/images/Spurgeon.png"
     alt="Spurgeon"
     className="mx-auto mb-6 w-32 h-auto"
   />
