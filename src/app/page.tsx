@@ -215,8 +215,9 @@ const PreacherAvatar = () => (
 
 export default function Page() {
   const [stage, setStage] = useState<Stage>('intro');
+  const [stagePage, setStagePage] = useState(0);
   const audioRef = useRef<HTMLAudioElement>(null);
-  const [audioEnabled, setAudioEnabled] = useState(true);
+  const [audioEnabled, setAudioEnabled] = useState(false);
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({});
 
   const nextStage = () => {
@@ -224,6 +225,27 @@ export default function Page() {
     const currentIndex = stages.indexOf(stage);
     if (currentIndex < stages.length - 1) {
       setStage(stages[currentIndex + 1]);
+      setStagePage(0);
+    }
+  };
+
+  const nextPage = () => {
+    const maxPages: Record<Stage, number> = {
+      'intro': 1,
+      'god': 2,
+      'man': 2,
+      'jesus': 2,
+      'invitation': 2,
+      'prayer': 2
+    };
+    if (stagePage < maxPages[stage] - 1) {
+      setStagePage(stagePage + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (stagePage > 0) {
+      setStagePage(stagePage - 1);
     }
   };
 
@@ -335,85 +357,72 @@ export default function Page() {
 
         {/* Stage 1: Who is God */}
         {stage === 'god' && (
-          <div className="space-y-4 animate-fade-in">
-            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-4 sm:p-6 rounded-sm">
-              <div className="space-y-3">
-                <GodScene />
-                <CrownIcon />
-                <h2 className="text-2xl sm:text-3xl font-serif font-bold text-center text-amber-950">Who is God?</h2>
-                <div className="w-16 h-0.5 bg-amber-800 mx-auto"></div>
+          <div className="space-y-4 animate-fade-in h-full flex flex-col">
+            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-6 rounded-sm flex-1 flex flex-col">
+              <div className="space-y-4 flex-1 flex flex-col">
+                {/* Page 0: Intro with Scene */}
+                {stagePage === 0 && (
+                  <div className="space-y-4 flex flex-col flex-1">
+                    <GodScene />
+                    <CrownIcon />
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">Who is God?</h2>
+                    <div className="w-16 h-1 bg-amber-800 mx-auto"></div>
+                    
+                    <p className="text-lg sm:text-xl leading-relaxed font-serif text-gray-800 italic flex-1">
+                      "In the beginning, God created everything—and it was perfect. He created humanity in His image to live in perfect fellowship with Him."
+                    </p>
+                    
+                    <p className="text-lg sm:text-xl leading-relaxed font-serif text-gray-700">
+                      God is the eternal Creator—infinitely holy, perfectly just, and completely sovereign. He's perfect in every way.
+                    </p>
+                  </div>
+                )}
 
-                <p className="text-sm sm:text-base leading-relaxed font-serif text-gray-800 italic">
-                  "In the beginning, God created everything—and it was perfect. He created humanity in His image to live in perfect fellowship with Him."
-                </p>
-                
-                <div className="border-l-4 border-amber-800 pl-4 py-2 bg-amber-50">
-                  <p className="italic text-gray-700 font-serif text-xs sm:text-sm">
-                    "So God created man in his own image, in the image of God he created him; male and female he created them... And God saw everything that he had made, and behold, it was very good."
-                  </p>
-                  <p className="text-xs text-amber-800 mt-1 font-serif">— Genesis 1:27, 31</p>
-                </div>
-
-                <p className="text-sm sm:text-base leading-relaxed font-serif text-gray-700">
-                  God is the eternal Creator—infinitely holy, perfectly just, and completely sovereign. He's perfect in every way, and He created you on purpose to know Him and walk with Him. This was His design from the very beginning—perfect fellowship between Creator and creation.
-                </p>
-
-                {/* Learn More Section */}
-                <div className="border-t-2 border-amber-300 pt-6 mt-6">
-                  <button
-                    onClick={() => toggleSection('god-more')}
-                    className="text-amber-900 hover:text-amber-700 font-serif font-semibold flex items-center gap-2 mx-auto"
-                  >
-                    {expandedSections['god-more'] ? '− Less Detail' : '+ Learn More'} about God's attributes
-                  </button>
-                  {expandedSections['god-more'] && (
-                    <div className="mt-4 space-y-4 text-gray-700 animate-fade-in font-serif bg-amber-50 p-6 border border-amber-200">
-                      <div>
-                        <p className="mb-2"><strong className="text-amber-900">All-Powerful:</strong> Nothing is beyond God's ability.</p>
-                        <div className="border-l-4 border-amber-600 pl-4 py-2 bg-white italic text-sm">
-                          <p>"Lift up your eyes on high and see: who created these? He who brings out their host by number, calling them all by name; by the greatness of his might and because he is strong in power, not one is missing."</p>
-                          <p className="text-amber-800 mt-1">— Isaiah 40:26</p>
-                        </div>
-                      </div>
-                      <div>
-                        <p className="mb-2"><strong className="text-amber-900">All-Knowing:</strong> He knows every detail of your past, present, and future.</p>
-                        <div className="border-l-4 border-amber-600 pl-4 py-2 bg-white italic text-sm">
-                          <p>"You know when I sit down and when I rise up; you discern my thoughts from afar. You search out my path and my lying down and are acquainted with all my ways."</p>
-                          <p className="text-amber-800 mt-1">— Psalm 139:2-3</p>
-                        </div>
-                      </div>
-                      <div>
-                        <p className="mb-2"><strong className="text-amber-900">Everywhere:</strong> God is present everywhere at every moment.</p>
-                        <div className="border-l-4 border-amber-600 pl-4 py-2 bg-white italic text-sm">
-                          <p>"Can a man hide himself in secret places so that I cannot see him? declares the Lord. Do I not fill heaven and earth? declares the Lord."</p>
-                          <p className="text-amber-800 mt-1">— Jeremiah 23:24</p>
-                        </div>
-                      </div>
-                      <div>
-                        <p className="mb-2"><strong className="text-amber-900">Eternal:</strong> He has no beginning and will have no end.</p>
-                        <div className="border-l-4 border-amber-600 pl-4 py-2 bg-white italic text-sm">
-                          <p>"Before the mountains were brought forth, or ever you had formed the earth and the world, from everlasting to everlasting you are God."</p>
-                          <p className="text-amber-800 mt-1">— Psalm 90:2</p>
-                        </div>
-                      </div>
-                      <div>
-                        <p className="mb-2"><strong className="text-amber-900">Unchanging:</strong> God's character and promises remain constant forever.</p>
-                        <div className="border-l-4 border-amber-600 pl-4 py-2 bg-white italic text-sm">
-                          <p>"For I the Lord do not change; therefore you, O children of Jacob, are not consumed."</p>
-                          <p className="text-amber-800 mt-1">— Malachi 3:6</p>
-                        </div>
-                      </div>
+                {/* Page 1: Scripture and Attributes */}
+                {stagePage === 1 && (
+                  <div className="space-y-4 flex flex-col flex-1">
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">God's Attributes</h2>
+                    <div className="w-16 h-1 bg-amber-800 mx-auto"></div>
+                    
+                    <div className="border-l-4 border-amber-800 pl-6 py-3 bg-amber-50 flex-1">
+                      <p className="italic text-gray-700 font-serif text-lg sm:text-xl">
+                        "So God created man in his own image, in the image of God he created him; male and female he created them... And God saw everything that he had made, and behold, it was very good."
+                      </p>
+                      <p className="text-lg text-amber-800 mt-3 font-serif">— Genesis 1:27, 31</p>
                     </div>
-                  )}
-                </div>
 
-                <div className="flex justify-center mt-8">
-                  <button
-                    onClick={nextStage}
-                    className="px-10 py-4 bg-amber-900 text-amber-50 font-serif text-lg hover:bg-amber-800 transition-all shadow-lg flex items-center gap-2 border-2 border-amber-950"
-                  >
-                    Continue <ChevronRight />
-                  </button>
+                    <p className="text-lg sm:text-xl leading-relaxed font-serif text-gray-700">
+                      He created you on purpose to know Him and walk with Him. This was His design from the very beginning—perfect fellowship between Creator and creation.
+                    </p>
+                  </div>
+                )}
+
+                {/* Navigation Buttons */}
+                <div className="flex gap-3 mt-6">
+                  {stagePage > 0 && (
+                    <button
+                      onClick={prevPage}
+                      className="flex-1 px-6 py-3 bg-amber-200 hover:bg-amber-300 text-amber-900 font-serif transition-all border-2 border-amber-300"
+                    >
+                      ← Back
+                    </button>
+                  )}
+                  {stagePage < 1 && (
+                    <button
+                      onClick={nextPage}
+                      className="flex-1 px-6 py-3 bg-amber-900 hover:bg-amber-800 text-amber-50 font-serif transition-all border-2 border-amber-950"
+                    >
+                      Next →
+                    </button>
+                  )}
+                  {stagePage === 1 && (
+                    <button
+                      onClick={nextStage}
+                      className="flex-1 px-6 py-3 bg-amber-900 hover:bg-amber-800 text-amber-50 font-serif transition-all border-2 border-amber-950"
+                    >
+                      Continue →
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
