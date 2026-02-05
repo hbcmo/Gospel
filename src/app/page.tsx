@@ -143,7 +143,7 @@ const JesusScene = () => (
     </g>
     {/* Brown cross bridge connecting God and Man */}
     <g stroke="#8b4513" strokeWidth="5" fill="none" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M 160 40 L 160 180">
+      <path d="M 160 60 L 160 210">
         <animate attributeName="opacity" values="1;0.7;1" dur="3s" repeatCount="indefinite" />
       </path>
       <path d="M 110 120 L 210 120">
