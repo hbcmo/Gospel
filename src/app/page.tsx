@@ -101,7 +101,6 @@ const IntroScene = () => (
     </defs>
     <circle cx="160" cy="60" r="50" fill="url(#introLight)" />
     <circle cx="160" cy="60" r="45" fill="none" stroke="#fbbf24" strokeWidth="2" opacity="0.6" />
-    <!-- Left hand reaching up -->
     <g transform="translate(80,120)" stroke="#111827" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="0" cy="0" r="4" />
       <path d="M 0 0 L 0 -30" />
@@ -109,7 +108,6 @@ const IntroScene = () => (
       <path d="M 0 0 L -8 10" />
       <path d="M 0 0 L 8 10" />
     </g>
-    <!-- Right hand reaching up -->
     <g transform="translate(240,120)" stroke="#111827" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="0" cy="0" r="4" />
       <path d="M 0 0 L 0 -30" />
