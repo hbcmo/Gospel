@@ -101,6 +101,7 @@ const IntroScene = () => (
     </defs>
     <circle cx="160" cy="60" r="50" fill="url(#introLight)" />
     <circle cx="160" cy="60" r="45" fill="none" stroke="#fbbf24" strokeWidth="2" opacity="0.6" />
+    <!-- Left hand reaching up -->
     <g transform="translate(80,120)" stroke="#111827" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="0" cy="0" r="4" />
       <path d="M 0 0 L 0 -30" />
@@ -108,6 +109,7 @@ const IntroScene = () => (
       <path d="M 0 0 L -8 10" />
       <path d="M 0 0 L 8 10" />
     </g>
+    <!-- Right hand reaching up -->
     <g transform="translate(240,120)" stroke="#111827" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="0" cy="0" r="4" />
       <path d="M 0 0 L 0 -30" />
@@ -149,16 +151,16 @@ const ManScene = () => (
       </path>
       <path d="M 0 160 L 320 160" />
     </g>
-    <g transform="translate(220,50)" stroke="#111827" strokeWidth="2" fill="none" strokeLinecap="round">
+    <g transform="translate(210,58)" stroke="#111827" strokeWidth="2" fill="none" strokeLinecap="round">
       <circle cx="20" cy="8" r="6" />
       <path d="M 20 14 L 20 34" />
       <path d="M 12 22 L 28 22" />
       <path d="M 20 34 L 12 48" />
       <path d="M 20 34 L 28 48" />
-      <animateTransform attributeName="transform" type="translate" values="220,50; 220,52; 220,50" dur="2s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="translate" values="210,58; 210,60; 210,58" dur="2s" repeatCount="indefinite" />
     </g>
     <text x="18" y="112" fontFamily="serif" fontSize="14" fill="#111827">God</text>
-    <text x="255" y="112" fontFamily="serif" fontSize="14" fill="#111827">Man</text>
+    <text x="230" y="112" fontFamily="serif" fontSize="14" fill="#111827">Man</text>
     <text x="150" y="152" fontFamily="serif" fontSize="12" fill="#111827">Sin</text>
   </svg>
 );
@@ -246,6 +248,145 @@ const PrayerScene = () => (
   </svg>
 );
 
+// Consequence of Sin scene - showing brokenness
+const ConsequenceScene = () => (
+  <svg viewBox="0 0 320 200" className="w-full max-w-2xl max-h-32 mx-auto mb-2">
+    <defs>
+      <linearGradient id="darkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stopColor="#7f1d1d" />
+        <stop offset="100%" stopColor="#1f2937" />
+      </linearGradient>
+    </defs>
+    <rect width="320" height="200" fill="url(#darkGrad)" />
+    <g stroke="#999999" strokeWidth="4" fill="none" strokeLinecap="round">
+      <path d="M 60 80 Q 80 60 100 80" />
+      <path d="M 100 80 Q 120 100 140 80" />
+      <circle cx="120" cy="85" r="8" fill="none" stroke="#dc2626" strokeWidth="5" />
+    </g>
+    <g transform="translate(50,120)" stroke="#999999" strokeWidth="2" fill="none" strokeLinecap="round">
+      <circle cx="0" cy="0" r="5" />
+      <path d="M 0 5 L 0 20" />
+      <path d="M -8 12 L 8 12" />
+      <path d="M 0 20 L -6 35" />
+      <path d="M 0 20 L 6 35" />
+    </g>
+    <g transform="translate(270,120)" stroke="#999999" strokeWidth="2" fill="none" strokeLinecap="round">
+      <circle cx="0" cy="0" r="5" />
+      <path d="M 0 5 L 0 20" />
+      <path d="M -8 12 L 8 12" />
+      <path d="M 0 20 L -6 35" />
+      <path d="M 0 20 L 6 35" />
+    </g>
+    <text x="160" y="175" fontFamily="serif" fontSize="13" fill="#fef3c7" textAnchor="middle">Separation</text>
+  </svg>
+);
+
+// Substitution/Exchange scene - showing burden transfer
+const ExchangeScene = () => (
+  <svg viewBox="0 0 320 200" className="w-full max-w-2xl max-h-32 mx-auto mb-2">
+    <defs>
+      <linearGradient id="exchangeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stopColor="#fef3c7" />
+        <stop offset="100%" stopColor="#dbeafe" />
+      </linearGradient>
+    </defs>
+    <g transform="translate(60,90)" stroke="#111827" strokeWidth="2" fill="none" strokeLinecap="round">
+      <circle cx="0" cy="0" r="5" />
+      <path d="M 0 5 L 0 25" />
+      <path d="M -10 15 L 10 15" />
+      <path d="M 0 25 L -8 40" />
+      <path d="M 0 25 L 8 40" />
+    </g>
+    <g transform="translate(50,60)" stroke="#dc2626" strokeWidth="3" fill="none">
+      <rect x="0" y="0" width="20" height="30" rx="2" />
+      <path d="M 2 5 L 18 25 M 18 5 L 2 25" />
+    </g>
+    <g transform="translate(160,70)">
+      <circle cx="0" cy="0" r="6" fill="#8b4513" />
+      <g stroke="#8b4513" strokeWidth="4" fill="none" strokeLinecap="round">
+        <path d="M 0 -15 L 0 25" />
+        <path d="M -12 5 L 12 5" />
+      </g>
+    </g>
+    <g transform="translate(260,90)" stroke="#111827" strokeWidth="2" fill="none" strokeLinecap="round">
+      <circle cx="0" cy="0" r="5" />
+      <path d="M 0 5 L 0 25" />
+      <path d="M -10 15 L 10 15" />
+      <path d="M 0 25 L -8 40" />
+      <path d="M 0 25 L 8 40" />
+    </g>
+    <circle cx="260" cy="50" r="15" fill="#fbbf24" opacity="0.6" />
+    <text x="160" y="175" fontFamily="serif" fontSize="13" fill="#111827" textAnchor="middle">Christ Bears Our Burden</text>
+  </svg>
+);
+
+// Steps/pathway scene
+const StepsScene = () => (
+  <svg viewBox="0 0 320 200" className="w-full max-w-2xl max-h-32 mx-auto mb-2">
+    <defs>
+      <linearGradient id="stepsGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#dc2626" />
+        <stop offset="50%" stopColor="#f59e0b" />
+        <stop offset="100%" stopColor="#16a34a" />
+      </linearGradient>
+    </defs>
+    <g fill="url(#stepsGrad)" stroke="#111827" strokeWidth="2">
+      <rect x="30" y="120" width="50" height="40" rx="3" />
+      <rect x="135" y="90" width="50" height="70" rx="3" />
+      <rect x="240" y="60" width="50" height="100" rx="3" />
+    </g>
+    <text x="55" y="155" fontFamily="serif" fontSize="12" fill="#111827" textAnchor="middle" fontWeight="bold">1</text>
+    <text x="160" y="135" fontFamily="serif" fontSize="12" fill="#111827" textAnchor="middle" fontWeight="bold">2</text>
+    <text x="265" y="115" fontFamily="serif" fontSize="12" fill="#111827" textAnchor="middle" fontWeight="bold">3</text>
+    <g transform="translate(20,130)" stroke="#111827" strokeWidth="2" fill="none" strokeLinecap="round">
+      <circle cx="0" cy="0" r="4" />
+      <path d="M 0 4 L 0 16" />
+      <path d="M -6 10 L 6 10" />
+      <path d="M 0 16 L -5 28" />
+      <path d="M 0 16 L 5 28" />
+    </g>
+    <text x="160" y="30" fontFamily="serif" fontSize="14" fill="#111827" textAnchor="middle" fontWeight="bold">Three Steps to Salvation</text>
+  </svg>
+);
+
+// Discipleship/Growth scene
+const DiscipleshipScene = () => (
+  <svg viewBox="0 0 320 200" className="w-full max-w-2xl max-h-32 mx-auto mb-2">
+    <defs>
+      <linearGradient id="growthGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+        <stop offset="0%" stopColor="#65a30d" />
+        <stop offset="100%" stopColor="#86efac" />
+      </linearGradient>
+    </defs>
+    <g fill="url(#growthGrad)" stroke="#111827" strokeWidth="1.5">
+      <rect x="155" y="140" width="10" height="30" />
+      <ellipse cx="140" cy="130" rx="18" ry="12" />
+      <ellipse cx="160" cy="110" rx="20" ry="14" />
+      <ellipse cx="180" cy="130" rx="18" ry="12" />
+      <ellipse cx="170" cy="90" rx="22" ry="16" />
+    </g>
+    <g transform="translate(50,100)" stroke="#111827" strokeWidth="2" fill="#fde68a">
+      <rect x="0" y="0" width="40" height="50" />
+      <polygon points="0,0 20,-15 40,0" fill="#92400e" stroke="#111827" strokeWidth="2" />
+      <circle cx="10" cy="15" r="3" />
+      <circle cx="30" cy="15" r="3" />
+      <rect x="5" y="30" width="8" height="10" />
+      <rect x="27" y="30" width="8" height="10" />
+    </g>
+    <g transform="translate(260,110)" stroke="#111827" strokeWidth="2" fill="#dbeafe">
+      <rect x="0" y="0" width="20" height="30" rx="1" />
+      <path d="M 10 0 L 10 30" />
+      <line x1="2" y1="8" x2="8" y2="8" strokeWidth="1" />
+      <line x1="2" y1="14" x2="8" y2="14" strokeWidth="1" />
+      <line x1="2" y1="20" x2="8" y2="20" strokeWidth="1" />
+      <line x1="12" y1="8" x2="18" y2="8" strokeWidth="1" />
+      <line x1="12" y1="14" x2="18" y2="14" strokeWidth="1" />
+      <line x1="12" y1="20" x2="18" y2="20" strokeWidth="1" />
+    </g>
+    <text x="160" y="30" fontFamily="serif" fontSize="13" fill="#111827" textAnchor="middle" fontWeight="bold">Growing in Your Faith</text>
+  </svg>
+);
+
 // Presenter photo avatar
 const PreacherAvatar = () => (
   <img
@@ -321,12 +462,15 @@ export default function Page() {
   };
 
   return (
-    <div className="h-screen overflow-hidden bg-gradient-to-b from-amber-50 via-amber-100 to-amber-50 text-gray-900 flex flex-col">
+    <div className="h-screen overflow-hidden bg-gradient-to-b from-amber-50 via-amber-100 to-amber-50 text-gray-900">
+      {/* Background audio - soft instrumental hymn music */}
       <audio ref={audioRef} loop>
         <source src="/audio/jeremusic70-amazing-grace-instrumental-145357.mp3" type="audio/mpeg" />
+        {/* Fallback - silent audio to prevent errors if file not found */}
         <source src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=" type="audio/wav" />
       </audio>
       
+      {/* Audio toggle button */}
       <button
         onClick={toggleAudio}
         className="fixed top-4 right-4 z-50 p-3 bg-amber-800 text-amber-50 rounded-full shadow-lg hover:bg-amber-700 transition-all"
@@ -344,148 +488,439 @@ export default function Page() {
         )}
       </button>
 
-      <div className="h-full flex flex-col items-center justify-center px-4">
+      <div className="h-full flex flex-col container mx-auto px-4 py-4 max-w-4xl">
+
+        {/* Progress Bar */}
+        <div className="mb-4 flex-shrink-0">
+          <div className="flex justify-between mb-2 text-xs sm:text-sm font-serif">
+            <span className={stage === 'intro' || stage === 'god' ? 'text-amber-800 font-bold' : 'text-gray-500'}>Who is God</span>
+            <span className={stage === 'man' ? 'text-amber-800 font-bold' : 'text-gray-500'}>Who is Man</span>
+            <span className={stage === 'jesus' ? 'text-amber-800 font-bold' : 'text-gray-500'}>Who is Jesus</span>
+            <span className={stage === 'invitation' || stage === 'prayer' ? 'text-amber-800 font-bold' : 'text-gray-500'}>Invitation</span>
+          </div>
+          <div className="w-full h-2 bg-amber-200 rounded-sm overflow-hidden border border-amber-300">
+            <div 
+              className="h-full bg-gradient-to-r from-amber-600 to-amber-800 transition-all duration-500"
+              style={{ 
+                width: stage === 'intro' ? '0%' : 
+                       stage === 'god' ? '25%' : 
+                       stage === 'man' ? '50%' : 
+                       stage === 'jesus' ? '75%' : '100%' 
+              }}
+            />
+          </div>
+        </div>
+
+        {/* Scrollable content area */}
+        <div className="flex-1 overflow-y-auto">
+
+        {/* Intro Stage */}
         {stage === 'intro' && (
-          <div className="flex flex-col items-center gap-8">
-            <PreacherAvatar />
-            <button
-              onClick={nextStage}
-              className="px-8 py-4 bg-amber-900 text-amber-50 font-serif text-lg hover:bg-amber-800 transition-all shadow-lg border-2 border-amber-950"
-            >
-              Start
-            </button>
+          <div className="text-center space-y-4 animate-fade-in">
+            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-4 sm:p-6 rounded-sm">
+              <div className="space-y-3">
+                <IntroScene />
+                <PreacherAvatar />
+                <h1 className="text-2xl sm:text-4xl font-serif font-bold text-amber-950">Hey there, friend</h1>
+                <p className="text-base sm:text-lg text-gray-700 font-serif leading-relaxed">
+                  I'm Charles, and I'm passionate about sharing something that genuinely changes lives—the message of salvation and what it means to follow Jesus.
+                </p>
+                <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto font-serif leading-relaxed">
+                  Over the next few minutes, I want to walk you through four essential truths that have the power to transform how you see yourself, God, and your future. Sound good?
+                </p>
+                <button
+                  onClick={nextStage}
+                  className="px-8 py-3 bg-amber-900 text-amber-50 font-serif text-base sm:text-lg hover:bg-amber-800 transition-all shadow-lg flex items-center gap-2 mx-auto border-2 border-amber-950"
+                >
+                  Yes, Let's Begin <ChevronRight />
+                </button>
+              </div>
+            </div>
           </div>
         )}
 
+        {/* Stage 1: Who is God */}
         {stage === 'god' && (
-          <div className="w-full flex flex-col items-center gap-6">
-            <div className="relative">
-              <GodScene />
-            </div>
-            <span className="text-2xl font-serif font-bold text-amber-950">God</span>
-            <div className="flex gap-4">
-              {stagePage > 0 && (
-                <button onClick={prevPage} className="px-6 py-2 bg-amber-200 hover:bg-amber-300 text-amber-900 font-serif border-2 border-amber-300">
-                  ← Back
-                </button>
-              )}
-              {stagePage < 1 && (
-                <button onClick={nextPage} className="px-6 py-2 bg-amber-900 hover:bg-amber-800 text-amber-50 font-serif border-2 border-amber-950">
-                  Next →
-                </button>
-              )}
-              {stagePage === 1 && (
-                <button onClick={nextStage} className="px-6 py-2 bg-amber-900 hover:bg-amber-800 text-amber-50 font-serif border-2 border-amber-950">
-                  Continue →
-                </button>
-              )}
+          <div className="space-y-4 animate-fade-in h-full flex flex-col">
+            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-6 rounded-sm flex-1 flex flex-col">
+              <div className="space-y-4 flex-1 flex flex-col">
+                {/* Page 0: Intro with Scene */}
+                {stagePage === 0 && (
+                  <div className="space-y-4 flex flex-col flex-1">
+                    <GodScene />
+                    <CrownIcon />
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">Who is God?</h2>
+                    <div className="w-16 h-1 bg-amber-800 mx-auto"></div>
+                    
+                    <p className="text-lg sm:text-xl leading-relaxed font-serif text-gray-800 italic flex-1">
+                      "In the beginning, God created everything—and it was perfect. He created humanity in His image to live in perfect fellowship with Him."
+                    </p>
+                    
+                    <p className="text-lg sm:text-xl leading-relaxed font-serif text-gray-700">
+                      God is the eternal Creator—infinitely holy, perfectly just, and completely sovereign. He's perfect in every way.
+                    </p>
+                  </div>
+                )}
+
+                {/* Page 1: Scripture and Attributes */}
+                {stagePage === 1 && (
+                  <div className="space-y-4 flex flex-col flex-1">
+                    <CrownIcon />
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">God's Attributes</h2>
+                    <div className="w-16 h-1 bg-amber-800 mx-auto"></div>
+                    
+                    <div className="border-l-4 border-amber-800 pl-6 py-3 bg-amber-50 flex-1">
+                      <p className="italic text-gray-700 font-serif text-lg sm:text-xl">
+                        "So God created man in his own image, in the image of God he created him; male and female he created them... And God saw everything that he had made, and behold, it was very good."
+                      </p>
+                      <p className="text-lg text-amber-800 mt-3 font-serif">— Genesis 1:27, 31</p>
+                    </div>
+
+                    <p className="text-lg sm:text-xl leading-relaxed font-serif text-gray-700">
+                      He created you on purpose to know Him and walk with Him. This was His design from the very beginning—perfect fellowship between Creator and creation.
+                    </p>
+                  </div>
+                )}
+
+                {/* Navigation Buttons */}
+                <div className="flex gap-3 mt-6">
+                  {stagePage > 0 && (
+                    <button
+                      onClick={prevPage}
+                      className="flex-1 px-6 py-3 bg-amber-200 hover:bg-amber-300 text-amber-900 font-serif transition-all border-2 border-amber-300"
+                    >
+                      ← Back
+                    </button>
+                  )}
+                  {stagePage < 1 && (
+                    <button
+                      onClick={nextPage}
+                      className="flex-1 px-6 py-3 bg-amber-900 hover:bg-amber-800 text-amber-50 font-serif transition-all border-2 border-amber-950"
+                    >
+                      Next →
+                    </button>
+                  )}
+                  {stagePage === 1 && (
+                    <button
+                      onClick={nextStage}
+                      className="flex-1 px-6 py-3 bg-amber-900 hover:bg-amber-800 text-amber-50 font-serif transition-all border-2 border-amber-950"
+                    >
+                      Continue →
+                    </button>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         )}
 
+        {/* Stage 2: Who is Man */}
         {stage === 'man' && (
-          <div className="w-full flex flex-col items-center gap-6">
-            <div className="relative">
-              <ManScene />
-            </div>
-            <span className="text-2xl font-serif font-bold text-red-900">Man</span>
-            <div className="flex gap-4">
-              {stagePage > 0 && (
-                <button onClick={prevPage} className="px-6 py-2 bg-red-200 hover:bg-red-300 text-red-900 font-serif border-2 border-red-300">
-                  ← Back
-                </button>
-              )}
-              {stagePage < 1 && (
-                <button onClick={nextPage} className="px-6 py-2 bg-red-900 hover:bg-red-800 text-red-50 font-serif border-2 border-red-950">
-                  Next →
-                </button>
-              )}
-              {stagePage === 1 && (
-                <button onClick={nextStage} className="px-6 py-2 bg-red-900 hover:bg-red-800 text-red-50 font-serif border-2 border-red-950">
-                  Continue →
-                </button>
-              )}
+          <div className="space-y-4 animate-fade-in h-full flex flex-col">
+            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-6 rounded-sm flex-1 flex flex-col">
+              <div className="space-y-4 flex-1 flex flex-col">
+                {/* Page 0: Intro with Scene */}
+                {stagePage === 0 && (
+                  <div className="space-y-4 flex flex-col flex-1">
+                    <ManScene />
+                    <BrokenHeartIcon />
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">Who is Man?</h2>
+                    <div className="w-16 h-1 bg-amber-800 mx-auto"></div>
+
+                    <p className="text-lg sm:text-xl leading-relaxed font-serif text-gray-800 italic flex-1">
+                      "But that perfect fellowship was shattered. Humanity chose to rebel against God—and sin entered the world, creating a chasm between us and Him."
+                    </p>
+                    
+                    <p className="text-lg sm:text-xl leading-relaxed font-serif text-gray-700">
+                      Sin isn't just bad actions—it's a broken condition in all of us that separates us from God.
+                    </p>
+                  </div>
+                )}
+
+                {/* Page 1: Scripture and Consequences */}
+                {stagePage === 1 && (
+                  <div className="space-y-4 flex flex-col flex-1">
+                    <ConsequenceScene />
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">The Consequence of Sin</h2>
+                    <div className="w-16 h-1 bg-red-800 mx-auto"></div>
+                    
+                    <div className="border-l-4 border-red-800 pl-6 py-3 bg-red-50 flex-1">
+                      <p className="italic text-gray-700 font-serif text-lg sm:text-xl">
+                        "All have sinned and fall short of the glory of God."
+                      </p>
+                      <p className="text-lg text-red-800 mt-3 font-serif">— Romans 3:23</p>
+                    </div>
+
+                    <p className="text-lg sm:text-xl leading-relaxed font-serif text-gray-700">
+                      Because God is perfectly just, He can't ignore sin. And the consequence is severe: <strong className="text-red-900">eternal separation from God</strong>. We're spiritually dead without God's help.
+                    </p>
+                  </div>
+                )}
+
+                {/* Navigation Buttons */}
+                <div className="flex gap-3 mt-6">
+                  {stagePage > 0 && (
+                    <button
+                      onClick={prevPage}
+                      className="flex-1 px-6 py-3 bg-red-200 hover:bg-red-300 text-red-900 font-serif transition-all border-2 border-red-300"
+                    >
+                      ← Back
+                    </button>
+                  )}
+                  {stagePage < 1 && (
+                    <button
+                      onClick={nextPage}
+                      className="flex-1 px-6 py-3 bg-red-900 hover:bg-red-800 text-red-50 font-serif transition-all border-2 border-red-950"
+                    >
+                      Next →
+                    </button>
+                  )}
+                  {stagePage === 1 && (
+                    <button
+                      onClick={nextStage}
+                      className="flex-1 px-6 py-3 bg-red-900 hover:bg-red-800 text-red-50 font-serif transition-all border-2 border-red-950"
+                    >
+                      Continue →
+                    </button>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         )}
 
+        {/* Stage 3: Who is Jesus */}
         {stage === 'jesus' && (
-          <div className="w-full flex flex-col items-center gap-6">
-            <div className="relative">
-              <JesusScene />
-            </div>
-            <span className="text-2xl font-serif font-bold text-blue-900">Jesus</span>
-            <div className="flex gap-4">
-              {stagePage > 0 && (
-                <button onClick={prevPage} className="px-6 py-2 bg-blue-200 hover:bg-blue-300 text-blue-900 font-serif border-2 border-blue-300">
-                  ← Back
-                </button>
-              )}
-              {stagePage < 1 && (
-                <button onClick={nextPage} className="px-6 py-2 bg-blue-900 hover:bg-blue-800 text-blue-50 font-serif border-2 border-blue-950">
-                  Next →
-                </button>
-              )}
-              {stagePage === 1 && (
-                <button onClick={nextStage} className="px-6 py-2 bg-blue-900 hover:bg-blue-800 text-blue-50 font-serif border-2 border-blue-950">
-                  Continue →
-                </button>
-              )}
+          <div className="space-y-4 animate-fade-in h-full flex flex-col">
+            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-6 rounded-sm flex-1 flex flex-col">
+              <div className="space-y-4 flex-1 flex flex-col">
+                {/* Page 0: Intro with Scene */}
+                {stagePage === 0 && (
+                  <div className="space-y-4 flex flex-col flex-1">
+                    <JesusScene />
+                    <CrossIcon />
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">Who is Jesus?</h2>
+                    <div className="w-16 h-1 bg-blue-800 mx-auto"></div>
+
+                    <p className="text-lg sm:text-xl leading-relaxed font-serif text-gray-800 italic flex-1">
+                      "And now for the life-changing part: Jesus is the bridge. God Himself came down as a man to span the chasm we could never cross."
+                    </p>
+                    
+                    <p className="text-lg sm:text-xl leading-relaxed font-serif text-gray-700">
+                      Jesus lived the perfect life we couldn't live, then took God's judgment for our sin on the cross.
+                    </p>
+                  </div>
+                )}
+
+                {/* Page 1: The Substitution */}
+                {stagePage === 1 && (
+                  <div className="space-y-4 flex flex-col flex-1">
+                    <ExchangeScene />
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">The Greatest Exchange</h2>
+                    <div className="w-16 h-1 bg-blue-800 mx-auto"></div>
+                    
+                    <div className="border-l-4 border-blue-800 pl-6 py-3 bg-blue-50 flex-1">
+                      <p className="italic text-gray-700 font-serif text-lg sm:text-xl">
+                        "He himself bore our sins in his body on the tree, that we might die to sin and live to righteousness."
+                      </p>
+                      <p className="text-lg text-blue-800 mt-3 font-serif">— 1 Peter 2:24</p>
+                    </div>
+
+                    <p className="text-lg sm:text-xl leading-relaxed font-serif text-gray-700">
+                      <strong className="text-blue-900">Substitutionary atonement</strong>: Jesus substituted Himself for you. His perfection gets credited to your account; your sin was placed on Him. It's the greatest exchange that's ever happened.
+                    </p>
+                  </div>
+                )}
+
+                {/* Navigation Buttons */}
+                <div className="flex gap-3 mt-6">
+                  {stagePage > 0 && (
+                    <button
+                      onClick={prevPage}
+                      className="flex-1 px-6 py-3 bg-blue-200 hover:bg-blue-300 text-blue-900 font-serif transition-all border-2 border-blue-300"
+                    >
+                      ← Back
+                    </button>
+                  )}
+                  {stagePage < 1 && (
+                    <button
+                      onClick={nextPage}
+                      className="flex-1 px-6 py-3 bg-blue-900 hover:bg-blue-800 text-blue-50 font-serif transition-all border-2 border-blue-950"
+                    >
+                      Next →
+                    </button>
+                  )}
+                  {stagePage === 1 && (
+                    <button
+                      onClick={nextStage}
+                      className="flex-1 px-6 py-3 bg-blue-900 hover:bg-blue-800 text-blue-50 font-serif transition-all border-2 border-blue-950"
+                    >
+                      Continue →
+                    </button>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         )}
 
+        {/* Stage 4: Invitation */}
         {stage === 'invitation' && (
-          <div className="w-full flex flex-col items-center gap-6">
-            <div className="relative">
-              <InvitationScene />
-            </div>
-            <span className="text-2xl font-serif font-bold text-green-900">Invitation</span>
-            <div className="flex gap-4">
-              {stagePage > 0 && (
-                <button onClick={prevPage} className="px-6 py-2 bg-green-200 hover:bg-green-300 text-green-900 font-serif border-2 border-green-300">
-                  ← Back
-                </button>
-              )}
-              {stagePage < 1 && (
-                <button onClick={nextPage} className="px-6 py-2 bg-green-900 hover:bg-green-800 text-green-50 font-serif border-2 border-green-950">
-                  Next →
-                </button>
-              )}
-              {stagePage === 1 && (
-                <button onClick={nextStage} className="px-6 py-2 bg-green-900 hover:bg-green-800 text-green-50 font-serif border-2 border-green-950">
-                  Let's Pray
-                </button>
-              )}
+          <div className="space-y-4 animate-fade-in h-full flex flex-col">
+            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-6 rounded-sm flex-1 flex flex-col">
+              <div className="space-y-4 flex-1 flex flex-col">
+                {/* Page 0: Intro */}
+                {stagePage === 0 && (
+                  <div className="space-y-4 flex flex-col flex-1">
+                    <InvitationScene />
+                    <OpenDoorIcon />
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">Will You Receive Christ?</h2>
+                    <div className="w-16 h-1 bg-green-800 mx-auto"></div>
+
+                    <p className="text-lg sm:text-xl leading-relaxed font-serif text-gray-800 italic flex-1">
+                      "God offers salvation as a free gift to all who repent and believe in Jesus Christ. The question now, my friend, is this: Will you receive Him?"
+                    </p>
+                    
+                    <div className="border-l-4 border-green-800 pl-6 py-3 bg-green-50">
+                      <p className="italic text-gray-700 font-serif text-lg sm:text-xl">
+                        "If you confess with your mouth that Jesus is Lord and believe in your heart that God raised him from the dead, you will be saved."
+                      </p>
+                      <p className="text-lg text-green-800 mt-3 font-serif">— Romans 10:9</p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Page 1: Three Steps */}
+                {stagePage === 1 && (
+                  <div className="space-y-4 flex flex-col flex-1">
+                    <StepsScene />
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">Three Steps</h2>
+                    <div className="w-16 h-1 bg-green-800 mx-auto"></div>
+                    
+                    <div className="bg-green-50 border-2 border-green-200 p-4 space-y-3 font-serif flex-1">
+                      <p className="text-lg sm:text-xl text-gray-800"><strong className="text-green-900">1. Repent:</strong> Turn away from your sin and turn toward Jesus.</p>
+                      <p className="text-lg sm:text-xl text-gray-800"><strong className="text-green-900">2. Believe:</strong> Trust Jesus completely. He's your only way to God.</p>
+                      <p className="text-lg sm:text-xl text-gray-800"><strong className="text-green-900">3. Receive:</strong> Accept the gift. Ask Jesus to be your Savior and Lord.</p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Navigation Buttons */}
+                <div className="flex gap-3 mt-6">
+                  {stagePage > 0 && (
+                    <button
+                      onClick={prevPage}
+                      className="flex-1 px-6 py-3 bg-green-200 hover:bg-green-300 text-green-900 font-serif transition-all border-2 border-green-300"
+                    >
+                      ← Back
+                    </button>
+                  )}
+                  {stagePage < 1 && (
+                    <button
+                      onClick={nextPage}
+                      className="flex-1 px-6 py-3 bg-green-900 hover:bg-green-800 text-green-50 font-serif transition-all border-2 border-green-950"
+                    >
+                      Next →
+                    </button>
+                  )}
+                  {stagePage === 1 && (
+                    <button
+                      onClick={nextStage}
+                      className="flex-1 px-6 py-3 bg-green-900 hover:bg-green-800 text-green-50 font-serif flex items-center justify-center gap-2 transition-all border-2 border-green-950"
+                    >
+                      Let's Pray <Heart className="w-4 h-4" />
+                    </button>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         )}
 
+        {/* Stage 5: Prayer */}
         {stage === 'prayer' && (
-          <div className="w-full flex flex-col items-center gap-6">
-            <div className="relative">
-              <PrayerScene />
-            </div>
-            <span className="text-2xl font-serif font-bold text-amber-900">Prayer</span>
-            <div className="flex gap-4">
-              {stagePage > 0 && (
-                <button onClick={prevPage} className="px-6 py-2 bg-amber-200 hover:bg-amber-300 text-amber-900 font-serif border-2 border-amber-300">
-                  ← Back
-                </button>
-              )}
-              {stagePage < 1 && (
-                <button onClick={nextPage} className="px-6 py-2 bg-amber-900 hover:bg-amber-800 text-amber-50 font-serif border-2 border-amber-950">
-                  Next →
-                </button>
-              )}
-              {stagePage === 1 && (
-                <button onClick={() => setStage('intro')} className="px-6 py-2 bg-amber-900 hover:bg-amber-800 text-amber-50 font-serif border-2 border-amber-950">
-                  Start Over
-                </button>
-              )}
+          <div className="space-y-4 animate-fade-in h-full flex flex-col">
+            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-6 rounded-sm flex-1 flex flex-col">
+              <div className="space-y-4 flex-1 flex flex-col">
+                {/* Page 0: Prayer Text */}
+                {stagePage === 0 && (
+                  <div className="space-y-4 flex flex-col flex-1">
+                    <PrayerScene />
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">Prayer of Salvation</h2>
+                    <div className="w-16 h-1 bg-amber-800 mx-auto"></div>
+
+                    <p className="text-lg sm:text-xl font-serif text-gray-700 leading-relaxed italic flex-1">
+                      "If you're ready to take this step and commit your life to Jesus, you can pray right now. Prayer doesn't save you—only Christ saves—but it's how you express your faith and surrender to Him."
+                    </p>
+
+                    <div className="bg-amber-50 border-2 border-amber-800 p-4 space-y-4">
+                      <p className="text-lg sm:text-xl italic leading-relaxed font-serif text-gray-800">
+                        "Lord Jesus, I admit that I'm a sinner and can't save myself. I believe You're God's Son, that You died on the cross for my sins, and that You rose from the dead. I'm turning from my sin and putting my trust in You alone. I surrender my life to You. Be my Savior and be my Lord. In Jesus' name, Amen."
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Page 1: Next Steps */}
+                {stagePage === 1 && (
+                  <div className="space-y-4 flex flex-col flex-1">
+                    <DiscipleshipScene />
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">What Happens Next?</h2>
+                    <div className="w-16 h-1 bg-green-800 mx-auto"></div>
+                    
+                    <div className="bg-green-50 border-2 border-green-700 p-4 space-y-3 font-serif flex-1 text-gray-800">
+                      <p className="text-lg sm:text-xl"><strong className="text-green-900">1.</strong> Find a Bible-believing church</p>
+                      <p className="text-lg sm:text-xl"><strong className="text-green-900">2.</strong> Read the Bible daily</p>
+                      <p className="text-lg sm:text-xl"><strong className="text-green-900">3.</strong> Pray regularly</p>
+                      <p className="text-lg sm:text-xl"><strong className="text-green-900">4.</strong> Be baptized</p>
+                      <p className="text-lg sm:text-xl"><strong className="text-green-900">5.</strong> Share your faith</p>
+                    </div>
+
+                    <div className="pt-2">
+                      <a 
+                        href="https://www.9marks.org/church-search/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="block text-center px-6 py-3 bg-green-700 text-white font-serif font-semibold hover:bg-green-800 transition-all rounded text-lg"
+                      >
+                        Find a Gospel-Centered Church
+                      </a>
+                    </div>
+                  </div>
+                )}
+
+                {/* Navigation Buttons */}
+                <div className="flex gap-3 mt-6">
+                  {stagePage > 0 && (
+                    <button
+                      onClick={prevPage}
+                      className="flex-1 px-6 py-3 bg-amber-200 hover:bg-amber-300 text-amber-900 font-serif transition-all border-2 border-amber-300"
+                    >
+                      ← Back
+                    </button>
+                  )}
+                  {stagePage < 1 && (
+                    <button
+                      onClick={nextPage}
+                      className="flex-1 px-6 py-3 bg-amber-900 hover:bg-amber-800 text-amber-50 font-serif transition-all border-2 border-amber-950"
+                    >
+                      Next →
+                    </button>
+                  )}
+                  {stagePage === 1 && (
+                    <button
+                      onClick={() => setStage('intro')}
+                      className="flex-1 px-6 py-3 bg-amber-900 hover:bg-amber-800 text-amber-50 font-serif transition-all border-2 border-amber-950"
+                    >
+                      Start Over
+                    </button>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         )}
+        </div>
       </div>
     </div>
   );
