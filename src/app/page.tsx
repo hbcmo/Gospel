@@ -315,7 +315,7 @@ export default function Page() {
                 <PreacherAvatar />
                 <h1 className="text-4xl font-serif font-bold mb-6 text-amber-950">Hey there, friend</h1>
                 <p className="text-lg text-gray-700 mb-6 font-serif leading-relaxed">
-                  I'm Jeremy, and I'm passionate about sharing something that genuinely changes lives—the message of salvation and what it means to follow Jesus.
+                  I'm Charles, and I'm passionate about sharing something that genuinely changes lives—the message of salvation and what it means to follow Jesus.
                 </p>
                 <p className="text-base text-gray-600 max-w-2xl mx-auto mb-8 font-serif leading-relaxed">
                   Over the next few minutes, I want to walk you through four essential truths that have the power to transform how you see yourself, God, and your future. Sound good?
