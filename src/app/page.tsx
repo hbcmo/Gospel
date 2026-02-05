@@ -7,7 +7,7 @@ type Stage = 'intro' | 'god' | 'man' | 'jesus' | 'invitation' | 'prayer';
 
 // Crown icon for God's sovereignty
 const CrownIcon = () => (
-  <svg viewBox="0 0 100 80" className="w-20 h-16 mx-auto mb-4">
+  <svg viewBox="0 0 100 80" className="w-12 h-10 mx-auto mb-2">
     <defs>
       <linearGradient id="goldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
         <stop offset="0%" stopColor="#ffd700" />
@@ -28,7 +28,7 @@ const CrownIcon = () => (
 
 // Broken heart icon for sin
 const BrokenHeartIcon = () => (
-  <svg viewBox="0 0 100 100" className="w-20 h-20 mx-auto mb-4">
+  <svg viewBox="0 0 100 100" className="w-12 h-12 mx-auto mb-2">
     <defs>
       <linearGradient id="heartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
         <stop offset="0%" stopColor="#dc2626" />
@@ -45,7 +45,7 @@ const BrokenHeartIcon = () => (
 
 // Cross icon for Jesus
 const CrossIcon = () => (
-  <svg viewBox="0 0 100 140" className="w-16 h-28 mx-auto mb-2">
+  <svg viewBox="0 0 100 140" className="w-12 h-20 mx-auto mb-2">
     <defs>
       <linearGradient id="woodGradient" x1="0%" y1="0%" x2="100%" y2="0%">
         <stop offset="0%" stopColor="#8b4513" />
@@ -60,7 +60,7 @@ const CrossIcon = () => (
 
 // Open door icon for invitation
 const OpenDoorIcon = () => (
-  <svg viewBox="0 0 100 120" className="w-16 h-24 mx-auto mb-4">
+  <svg viewBox="0 0 100 120" className="w-12 h-20 mx-auto mb-2">
     <defs>
       <linearGradient id="doorGradient" x1="0%" y1="0%" x2="100%" y2="0%">
         <stop offset="0%" stopColor="#92400e" />
@@ -83,7 +83,7 @@ const OpenDoorIcon = () => (
 
 // Scene illustrations for each stage
 const GodScene = () => (
-  <svg viewBox="0 0 320 180" className="w-full max-w-2xl mx-auto mb-6">
+  <svg viewBox="0 0 320 180" className="w-full max-w-2xl max-h-16 mx-auto mb-2">
     <g stroke="#111827" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <path d="M 0 120 L 320 120 L 320 160 L 0 160 Z" />
       <path d="M 0 160 L 320 160" />
@@ -103,7 +103,7 @@ const GodScene = () => (
 );
 
 const ManScene = () => (
-  <svg viewBox="0 0 320 180" className="w-full max-w-2xl mx-auto mb-6">
+  <svg viewBox="0 0 320 180" className="w-full max-w-2xl max-h-16 mx-auto mb-2">
     <g stroke="#111827" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <path d="M 0 120 L 110 120 L 140 160 L 0 160 Z" />
       <path d="M 210 120 L 320 120 L 320 160 L 180 160 Z" />
@@ -127,17 +127,17 @@ const ManScene = () => (
 );
 
 const JesusScene = () => (
-  <svg viewBox="0 0 320 180" className="w-full max-w-2xl mx-auto mb-6">
+  <svg viewBox="0 0 320 180" className="w-full max-w-2xl max-h-16 mx-auto mb-2">
     <g stroke="#111827" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <path d="M 0 120 L 110 120 L 140 160 L 0 160 Z" />
       <path d="M 210 120 L 320 120 L 320 160 L 180 160 Z" />
       <path d="M 0 160 L 320 160" />
     </g>
-    <g stroke="#111827" strokeWidth="3" fill="none" strokeLinecap="round">
-      <path d="M 160 90 L 160 180">
+    <g stroke="#8b4513" strokeWidth="4" fill="none" strokeLinecap="round">
+      <path d="M 160 70 L 160 180">
         <animate attributeName="opacity" values="1;0.7;1" dur="3s" repeatCount="indefinite" />
       </path>
-      <path d="M 110 120 L 210 120">
+      <path d="M 110 110 L 210 110">
         <animate attributeName="opacity" values="1;0.7;1" dur="3s" repeatCount="indefinite" />
       </path>
     </g>
@@ -148,7 +148,7 @@ const JesusScene = () => (
 );
 
 const InvitationScene = () => (
-  <svg viewBox="0 0 320 180" className="w-full max-w-2xl mx-auto mb-6">
+  <svg viewBox="0 0 320 180" className="w-full max-w-2xl max-h-16 mx-auto mb-2">
     <g stroke="#111827" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <path d="M 0 120 L 110 120 L 140 160 L 0 160 Z" />
       <path d="M 210 120 L 320 120 L 320 160 L 180 160 Z" />
@@ -176,7 +176,7 @@ const InvitationScene = () => (
 );
 
 const PrayerScene = () => (
-  <svg viewBox="0 0 320 180" className="w-full max-w-2xl mx-auto mb-6">
+  <svg viewBox="0 0 320 180" className="w-full max-w-2xl max-h-16 mx-auto mb-2">
     <g stroke="#111827" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <path d="M 0 120 L 110 120 L 140 160 L 0 160 Z" />
       <path d="M 210 120 L 320 120 L 320 160 L 180 160 Z" />
