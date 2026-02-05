@@ -45,24 +45,16 @@ const BrokenHeartIcon = () => (
 
 // Cross icon for Jesus
 const CrossIcon = () => (
-  <svg viewBox="0 0 100 120" className="w-16 h-24 mx-auto mb-4">
+  <svg viewBox="0 0 100 140" className="w-16 h-28 mx-auto mb-2">
     <defs>
       <linearGradient id="woodGradient" x1="0%" y1="0%" x2="100%" y2="0%">
         <stop offset="0%" stopColor="#8b4513" />
         <stop offset="50%" stopColor="#a0522d" />
         <stop offset="100%" stopColor="#8b4513" />
       </linearGradient>
-      <radialGradient id="glowGradient">
-        <stop offset="0%" stopColor="#fef3c7" stopOpacity="0.8" />
-        <stop offset="100%" stopColor="#fef3c7" stopOpacity="0" />
-      </radialGradient>
     </defs>
-    <ellipse cx="50" cy="60" rx="45" ry="50" fill="url(#glowGradient)" />
-    <rect x="42" y="10" width="16" height="100" rx="2" fill="url(#woodGradient)" stroke="#654321" strokeWidth="2" />
-    <rect x="20" y="30" width="60" height="16" rx="2" fill="url(#woodGradient)" stroke="#654321" strokeWidth="2" />
-    <circle cx="50" cy="38" r="2" fill="#1f2937" />
-    <path d="M 42 80 L 44 85 L 46 80" stroke="#654321" strokeWidth="1" fill="none" />
-    <path d="M 54 80 L 56 85 L 58 80" stroke="#654321" strokeWidth="1" fill="none" />
+    <rect x="44" y="5" width="12" height="130" rx="1" fill="url(#woodGradient)" stroke="#654321" strokeWidth="1.5" />
+    <rect x="20" y="35" width="60" height="12" rx="1" fill="url(#woodGradient)" stroke="#654321" strokeWidth="1.5" />
   </svg>
 );
 
@@ -245,20 +237,27 @@ export default function Page() {
   useEffect(() => {
     if (audioEnabled && audioRef.current) {
       audioRef.current.volume = 0.05;
-      audioRef.current.play().catch(() => {
-        // Audio autoplay failed - browser policy prevents autoplay
-      });
     } else if (!audioEnabled && audioRef.current) {
       audioRef.current.pause();
     }
   }, [audioEnabled]);
 
   const toggleAudio = () => {
-    setAudioEnabled(prev => !prev);
+    if (audioRef.current) {
+      if (audioEnabled) {
+        audioRef.current.pause();
+        setAudioEnabled(false);
+      } else {
+        audioRef.current.play().catch(() => {
+          // Audio play failed
+        });
+        setAudioEnabled(true);
+      }
+    }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 via-amber-100 to-amber-50 text-gray-900">
+    <div className="h-screen overflow-hidden bg-gradient-to-b from-amber-50 via-amber-100 to-amber-50 text-gray-900">
       {/* Background audio - soft instrumental hymn music */}
       <audio ref={audioRef} loop>
         <source src="/audio/jeremusic70-amazing-grace-instrumental-145357.mp3" type="audio/mpeg" />
@@ -284,11 +283,11 @@ export default function Page() {
         )}
       </button>
 
-      <div className="container mx-auto px-4 py-8 max-w-4xl">
+      <div className="h-full flex flex-col container mx-auto px-4 py-4 max-w-4xl">
 
         {/* Progress Bar */}
-        <div className="mb-8">
-          <div className="flex justify-between mb-2 text-sm font-serif">
+        <div className="mb-4 flex-shrink-0">
+          <div className="flex justify-between mb-2 text-xs sm:text-sm font-serif">
             <span className={stage === 'intro' || stage === 'god' ? 'text-amber-800 font-bold' : 'text-gray-500'}>Who is God</span>
             <span className={stage === 'man' ? 'text-amber-800 font-bold' : 'text-gray-500'}>Who is Man</span>
             <span className={stage === 'jesus' ? 'text-amber-800 font-bold' : 'text-gray-500'}>Who is Jesus</span>
@@ -307,22 +306,25 @@ export default function Page() {
           </div>
         </div>
 
+        {/* Scrollable content area */}
+        <div className="flex-1 overflow-y-auto">
+
         {/* Intro Stage */}
         {stage === 'intro' && (
-          <div className="text-center space-y-8 animate-fade-in">
-            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-8 rounded-sm">
-              <div className="space-y-6">
+          <div className="text-center space-y-4 animate-fade-in">
+            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-4 sm:p-6 rounded-sm">
+              <div className="space-y-3">
                 <PreacherAvatar />
-                <h1 className="text-4xl font-serif font-bold mb-6 text-amber-950">Hey there, friend</h1>
-                <p className="text-lg text-gray-700 mb-6 font-serif leading-relaxed">
+                <h1 className="text-2xl sm:text-4xl font-serif font-bold text-amber-950">Hey there, friend</h1>
+                <p className="text-base sm:text-lg text-gray-700 font-serif leading-relaxed">
                   I'm Charles, and I'm passionate about sharing something that genuinely changes lives—the message of salvation and what it means to follow Jesus.
                 </p>
-                <p className="text-base text-gray-600 max-w-2xl mx-auto mb-8 font-serif leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto font-serif leading-relaxed">
                   Over the next few minutes, I want to walk you through four essential truths that have the power to transform how you see yourself, God, and your future. Sound good?
                 </p>
                 <button
                   onClick={nextStage}
-                  className="px-10 py-4 bg-amber-900 text-amber-50 font-serif text-lg hover:bg-amber-800 transition-all shadow-lg flex items-center gap-2 mx-auto border-2 border-amber-950"
+                  className="px-8 py-3 bg-amber-900 text-amber-50 font-serif text-base sm:text-lg hover:bg-amber-800 transition-all shadow-lg flex items-center gap-2 mx-auto border-2 border-amber-950"
                 >
                   Yes, Let's Begin <ChevronRight />
                 </button>
@@ -333,26 +335,26 @@ export default function Page() {
 
         {/* Stage 1: Who is God */}
         {stage === 'god' && (
-          <div className="space-y-8 animate-fade-in">
-            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-8 rounded-sm">
-              <div className="space-y-6">
+          <div className="space-y-4 animate-fade-in">
+            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-4 sm:p-6 rounded-sm">
+              <div className="space-y-3">
                 <GodScene />
                 <CrownIcon />
-                <h2 className="text-4xl font-serif font-bold mb-6 text-center text-amber-950">Who is God?</h2>
-                <div className="w-24 h-1 bg-amber-800 mx-auto mb-6"></div>
+                <h2 className="text-2xl sm:text-3xl font-serif font-bold text-center text-amber-950">Who is God?</h2>
+                <div className="w-16 h-0.5 bg-amber-800 mx-auto"></div>
 
-                <p className="text-lg leading-relaxed font-serif text-gray-800 italic">
+                <p className="text-sm sm:text-base leading-relaxed font-serif text-gray-800 italic">
                   "In the beginning, God created everything—and it was perfect. He created humanity in His image to live in perfect fellowship with Him."
                 </p>
                 
-                <div className="border-l-4 border-amber-800 pl-6 py-2 bg-amber-50">
-                  <p className="italic text-gray-700 font-serif">
+                <div className="border-l-4 border-amber-800 pl-4 py-2 bg-amber-50">
+                  <p className="italic text-gray-700 font-serif text-xs sm:text-sm">
                     "So God created man in his own image, in the image of God he created him; male and female he created them... And God saw everything that he had made, and behold, it was very good."
                   </p>
-                  <p className="text-sm text-amber-800 mt-2 font-serif">— Genesis 1:27, 31</p>
+                  <p className="text-xs text-amber-800 mt-1 font-serif">— Genesis 1:27, 31</p>
                 </div>
 
-                <p className="text-lg leading-relaxed font-serif text-gray-700">
+                <p className="text-sm sm:text-base leading-relaxed font-serif text-gray-700">
                   God is the eternal Creator—infinitely holy, perfectly just, and completely sovereign. He's perfect in every way, and He created you on purpose to know Him and walk with Him. This was His design from the very beginning—perfect fellowship between Creator and creation.
                 </p>
 
@@ -764,6 +766,7 @@ export default function Page() {
             </div>
           </div>
         )}
+        </div>
       </div>
     </div>
   );
