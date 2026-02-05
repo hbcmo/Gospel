@@ -246,145 +246,6 @@ const PrayerScene = () => (
   </svg>
 );
 
-// Consequence of Sin scene - showing brokenness
-const ConsequenceScene = () => (
-  <svg viewBox="0 0 320 200" className="w-full max-w-2xl max-h-32 mx-auto mb-2">
-    <defs>
-      <linearGradient id="darkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stopColor="#7f1d1d" />
-        <stop offset="100%" stopColor="#1f2937" />
-      </linearGradient>
-    </defs>
-    <rect width="320" height="200" fill="url(#darkGrad)" />
-    <g stroke="#999999" strokeWidth="4" fill="none" strokeLinecap="round">
-      <path d="M 60 80 Q 80 60 100 80" />
-      <path d="M 100 80 Q 120 100 140 80" />
-      <circle cx="120" cy="85" r="8" fill="none" stroke="#dc2626" strokeWidth="5" />
-    </g>
-    <g transform="translate(50,120)" stroke="#999999" strokeWidth="2" fill="none" strokeLinecap="round">
-      <circle cx="0" cy="0" r="5" />
-      <path d="M 0 5 L 0 20" />
-      <path d="M -8 12 L 8 12" />
-      <path d="M 0 20 L -6 35" />
-      <path d="M 0 20 L 6 35" />
-    </g>
-    <g transform="translate(270,120)" stroke="#999999" strokeWidth="2" fill="none" strokeLinecap="round">
-      <circle cx="0" cy="0" r="5" />
-      <path d="M 0 5 L 0 20" />
-      <path d="M -8 12 L 8 12" />
-      <path d="M 0 20 L -6 35" />
-      <path d="M 0 20 L 6 35" />
-    </g>
-    <text x="160" y="175" fontFamily="serif" fontSize="13" fill="#fef3c7" textAnchor="middle">Separation</text>
-  </svg>
-);
-
-// Substitution/Exchange scene - showing burden transfer
-const ExchangeScene = () => (
-  <svg viewBox="0 0 320 200" className="w-full max-w-2xl max-h-32 mx-auto mb-2">
-    <defs>
-      <linearGradient id="exchangeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stopColor="#fef3c7" />
-        <stop offset="100%" stopColor="#dbeafe" />
-      </linearGradient>
-    </defs>
-    <g transform="translate(60,90)" stroke="#111827" strokeWidth="2" fill="none" strokeLinecap="round">
-      <circle cx="0" cy="0" r="5" />
-      <path d="M 0 5 L 0 25" />
-      <path d="M -10 15 L 10 15" />
-      <path d="M 0 25 L -8 40" />
-      <path d="M 0 25 L 8 40" />
-    </g>
-    <g transform="translate(50,60)" stroke="#dc2626" strokeWidth="3" fill="none">
-      <rect x="0" y="0" width="20" height="30" rx="2" />
-      <path d="M 2 5 L 18 25 M 18 5 L 2 25" />
-    </g>
-    <g transform="translate(160,70)">
-      <circle cx="0" cy="0" r="6" fill="#8b4513" />
-      <g stroke="#8b4513" strokeWidth="4" fill="none" strokeLinecap="round">
-        <path d="M 0 -15 L 0 25" />
-        <path d="M -12 5 L 12 5" />
-      </g>
-    </g>
-    <g transform="translate(260,90)" stroke="#111827" strokeWidth="2" fill="none" strokeLinecap="round">
-      <circle cx="0" cy="0" r="5" />
-      <path d="M 0 5 L 0 25" />
-      <path d="M -10 15 L 10 15" />
-      <path d="M 0 25 L -8 40" />
-      <path d="M 0 25 L 8 40" />
-    </g>
-    <circle cx="260" cy="50" r="15" fill="#fbbf24" opacity="0.6" />
-    <text x="160" y="175" fontFamily="serif" fontSize="13" fill="#111827" textAnchor="middle">Christ Bears Our Burden</text>
-  </svg>
-);
-
-// Steps/pathway scene
-const StepsScene = () => (
-  <svg viewBox="0 0 320 200" className="w-full max-w-2xl max-h-32 mx-auto mb-2">
-    <defs>
-      <linearGradient id="stepsGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#dc2626" />
-        <stop offset="50%" stopColor="#f59e0b" />
-        <stop offset="100%" stopColor="#16a34a" />
-      </linearGradient>
-    </defs>
-    <g fill="url(#stepsGrad)" stroke="#111827" strokeWidth="2">
-      <rect x="30" y="120" width="50" height="40" rx="3" />
-      <rect x="135" y="90" width="50" height="70" rx="3" />
-      <rect x="240" y="60" width="50" height="100" rx="3" />
-    </g>
-    <text x="55" y="155" fontFamily="serif" fontSize="12" fill="#111827" textAnchor="middle" fontWeight="bold">1</text>
-    <text x="160" y="135" fontFamily="serif" fontSize="12" fill="#111827" textAnchor="middle" fontWeight="bold">2</text>
-    <text x="265" y="115" fontFamily="serif" fontSize="12" fill="#111827" textAnchor="middle" fontWeight="bold">3</text>
-    <g transform="translate(20,130)" stroke="#111827" strokeWidth="2" fill="none" strokeLinecap="round">
-      <circle cx="0" cy="0" r="4" />
-      <path d="M 0 4 L 0 16" />
-      <path d="M -6 10 L 6 10" />
-      <path d="M 0 16 L -5 28" />
-      <path d="M 0 16 L 5 28" />
-    </g>
-    <text x="160" y="30" fontFamily="serif" fontSize="14" fill="#111827" textAnchor="middle" fontWeight="bold">Three Steps to Salvation</text>
-  </svg>
-);
-
-// Discipleship/Growth scene
-const DiscipleshipScene = () => (
-  <svg viewBox="0 0 320 200" className="w-full max-w-2xl max-h-32 mx-auto mb-2">
-    <defs>
-      <linearGradient id="growthGrad" x1="0%" y1="100%" x2="0%" y2="0%">
-        <stop offset="0%" stopColor="#65a30d" />
-        <stop offset="100%" stopColor="#86efac" />
-      </linearGradient>
-    </defs>
-    <g fill="url(#growthGrad)" stroke="#111827" strokeWidth="1.5">
-      <rect x="155" y="140" width="10" height="30" />
-      <ellipse cx="140" cy="130" rx="18" ry="12" />
-      <ellipse cx="160" cy="110" rx="20" ry="14" />
-      <ellipse cx="180" cy="130" rx="18" ry="12" />
-      <ellipse cx="170" cy="90" rx="22" ry="16" />
-    </g>
-    <g transform="translate(50,100)" stroke="#111827" strokeWidth="2" fill="#fde68a">
-      <rect x="0" y="0" width="40" height="50" />
-      <polygon points="0,0 20,-15 40,0" fill="#92400e" stroke="#111827" strokeWidth="2" />
-      <circle cx="10" cy="15" r="3" />
-      <circle cx="30" cy="15" r="3" />
-      <rect x="5" y="30" width="8" height="10" />
-      <rect x="27" y="30" width="8" height="10" />
-    </g>
-    <g transform="translate(260,110)" stroke="#111827" strokeWidth="2" fill="#dbeafe">
-      <rect x="0" y="0" width="20" height="30" rx="1" />
-      <path d="M 10 0 L 10 30" />
-      <line x1="2" y1="8" x2="8" y2="8" strokeWidth="1" />
-      <line x1="2" y1="14" x2="8" y2="14" strokeWidth="1" />
-      <line x1="2" y1="20" x2="8" y2="20" strokeWidth="1" />
-      <line x1="12" y1="8" x2="18" y2="8" strokeWidth="1" />
-      <line x1="12" y1="14" x2="18" y2="14" strokeWidth="1" />
-      <line x1="12" y1="20" x2="18" y2="20" strokeWidth="1" />
-    </g>
-    <text x="160" y="30" fontFamily="serif" fontSize="13" fill="#111827" textAnchor="middle" fontWeight="bold">Growing in Your Faith</text>
-  </svg>
-);
-
 // Presenter photo avatar
 const PreacherAvatar = () => (
   <img
@@ -517,7 +378,6 @@ export default function Page() {
           <div className="text-center space-y-4 animate-fade-in">
             <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-4 sm:p-6 rounded-sm">
               <div className="space-y-3">
-                <IntroScene />
                 <PreacherAvatar />
                 <h1 className="text-2xl sm:text-4xl font-serif font-bold text-amber-950">Hey there, friend</h1>
                 <p className="text-base sm:text-lg text-gray-700 font-serif leading-relaxed">
@@ -638,7 +498,6 @@ export default function Page() {
                 {/* Page 1: Scripture and Consequences */}
                 {stagePage === 1 && (
                   <div className="space-y-4 flex flex-col flex-1">
-                    <ConsequenceScene />
                     <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">The Consequence of Sin</h2>
                     <div className="w-16 h-1 bg-red-800 mx-auto"></div>
                     
@@ -713,7 +572,6 @@ export default function Page() {
                 {/* Page 1: The Substitution */}
                 {stagePage === 1 && (
                   <div className="space-y-4 flex flex-col flex-1">
-                    <ExchangeScene />
                     <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">The Greatest Exchange</h2>
                     <div className="w-16 h-1 bg-blue-800 mx-auto"></div>
                     
@@ -791,7 +649,6 @@ export default function Page() {
                 {/* Page 1: Three Steps */}
                 {stagePage === 1 && (
                   <div className="space-y-4 flex flex-col flex-1">
-                    <StepsScene />
                     <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">Three Steps</h2>
                     <div className="w-16 h-1 bg-green-800 mx-auto"></div>
                     
@@ -862,7 +719,6 @@ export default function Page() {
                 {/* Page 1: Next Steps */}
                 {stagePage === 1 && (
                   <div className="space-y-4 flex flex-col flex-1">
-                    <DiscipleshipScene />
                     <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">What Happens Next?</h2>
                     <div className="w-16 h-1 bg-green-800 mx-auto"></div>
                     
