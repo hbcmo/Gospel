@@ -215,8 +215,8 @@ const PrayerScene = () => (
 // Presenter photo avatar
 const PreacherAvatar = () => (
   <img
-    src="/images/Jeremy.png.png"
-    alt="Jeremy"
+    src="/images/Spurgeoun.png"
+    alt="Spurgeon"
     className="mx-auto mb-6 w-32 h-auto"
   />
 );
@@ -310,8 +310,8 @@ export default function Page() {
         {/* Intro Stage */}
         {stage === 'intro' && (
           <div className="text-center space-y-8 animate-fade-in">
-            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-12 rounded-sm">
-              <div className="border-2 border-amber-700 p-8">
+            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-8 rounded-sm">
+              <div className="space-y-6">
                 <PreacherAvatar />
                 <h1 className="text-4xl font-serif font-bold mb-6 text-amber-950">Hey there, friend</h1>
                 <p className="text-lg text-gray-700 mb-6 font-serif leading-relaxed">
@@ -334,9 +334,8 @@ export default function Page() {
         {/* Stage 1: Who is God */}
         {stage === 'god' && (
           <div className="space-y-8 animate-fade-in">
-            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-10 rounded-sm">
-              <div className="border-2 border-amber-700 p-8 space-y-6">
-                <PreacherAvatar />
+            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-8 rounded-sm">
+              <div className="space-y-6">
                 <GodScene />
                 <CrownIcon />
                 <h2 className="text-4xl font-serif font-bold mb-6 text-center text-amber-950">Who is God?</h2>
@@ -422,9 +421,8 @@ export default function Page() {
         {/* Stage 2: Who is Man */}
         {stage === 'man' && (
           <div className="space-y-8 animate-fade-in">
-            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-10 rounded-sm">
-              <div className="border-2 border-amber-700 p-8 space-y-6">
-                <PreacherAvatar />
+            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-8 rounded-sm">
+              <div className="space-y-6">
                 <ManScene />
                 <BrokenHeartIcon />
                 <h2 className="text-4xl font-serif font-bold mb-6 text-center text-amber-950">Who is Man?</h2>
@@ -516,9 +514,8 @@ export default function Page() {
         {/* Stage 3: Who is Jesus */}
         {stage === 'jesus' && (
           <div className="space-y-8 animate-fade-in">
-            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-10 rounded-sm">
-              <div className="border-2 border-amber-700 p-8 space-y-6">
-                <PreacherAvatar />
+            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-8 rounded-sm">
+              <div className="space-y-6">
                 <JesusScene />
                 <CrossIcon />
                 <h2 className="text-4xl font-serif font-bold mb-6 text-center text-amber-950">Who is Jesus?</h2>
@@ -610,9 +607,8 @@ export default function Page() {
         {/* Stage 4: Invitation */}
         {stage === 'invitation' && (
           <div className="space-y-8 animate-fade-in">
-            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-10 rounded-sm">
-              <div className="border-2 border-amber-700 p-8 space-y-6">
-                <PreacherAvatar />
+            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-8 rounded-sm">
+              <div className="space-y-6">
                 <InvitationScene />
                 <OpenDoorIcon />
                 <h2 className="text-4xl font-serif font-bold mb-6 text-center text-amber-950">Will You Receive Christ?</h2>
@@ -710,9 +706,8 @@ export default function Page() {
         {/* Stage 5: Prayer */}
         {stage === 'prayer' && (
           <div className="space-y-8 animate-fade-in">
-            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-10 rounded-sm">
-              <div className="border-2 border-amber-700 p-8 space-y-6">
-                <PreacherAvatar />
+            <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-8 rounded-sm">
+              <div className="space-y-6">
                 <PrayerScene />
                 <h2 className="text-4xl font-serif font-bold mb-6 text-center text-amber-950">Prayer of Salvation</h2>
                 <div className="w-24 h-1 bg-amber-800 mx-auto mb-6"></div>
