@@ -111,7 +111,7 @@ const GodScene = () => (
 );
 
 const ManScene = () => (
-  <svg viewBox="0 0 320 180" className="w-full max-w-2xl max-h-16 mx-auto mb-2">
+  <svg viewBox="0 0 320 220" className="w-full max-w-2xl max-h-24 mx-auto mb-2">
     <g stroke="#111827" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <path d="M 0 120 L 110 120 L 140 160 L 0 160 Z" />
       <path d="M 210 120 L 320 120 L 320 160 L 180 160 Z" />
@@ -150,14 +150,14 @@ const JesusScene = () => (
         <animate attributeName="opacity" values="1;0.7;1" dur="3s" repeatCount="indefinite" />
       </path>
     </g>
-    <text x="18" y="200" fontFamily="serif" fontSize="14" fill="#111827">God</text>
-    <text x="230" y="200" fontFamily="serif" fontSize="14" fill="#111827">Man</text>
-    <text x="138" y="175" fontFamily="serif" fontSize="12" fill="#111827">Christ</text>
+    <text x="18" y="112" fontFamily="serif" fontSize="14" fill="#111827">God</text>
+    <text x="230" y="112" fontFamily="serif" fontSize="14" fill="#111827">Man</text>
+    <text x="138" y="152" fontFamily="serif" fontSize="12" fill="#111827">Christ</text>
   </svg>
 );
 
 const InvitationScene = () => (
-  <svg viewBox="0 0 320 180" className="w-full max-w-2xl max-h-16 mx-auto mb-2">
+  <svg viewBox="0 0 320 220" className="w-full max-w-2xl max-h-24 mx-auto mb-2">
     <g stroke="#111827" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <path d="M 0 120 L 110 120 L 140 160 L 0 160 Z" />
       <path d="M 210 120 L 320 120 L 320 160 L 180 160 Z" />
@@ -166,9 +166,13 @@ const InvitationScene = () => (
         <animate attributeName="stroke-dashoffset" from="0" to="12" dur="1.5s" repeatCount="indefinite" />
       </path>
     </g>
-    <g stroke="#111827" strokeWidth="3" fill="none" strokeLinecap="round">
-      <path d="M 160 90 L 160 180" />
-      <path d="M 110 120 L 210 120" />
+    <g stroke="#8b4513" strokeWidth="5" fill="none" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M 160 60 L 160 210">
+        <animate attributeName="opacity" values="1;0.7;1" dur="3s" repeatCount="indefinite" />
+      </path>
+      <path d="M 110 120 L 210 120">
+        <animate attributeName="opacity" values="1;0.7;1" dur="3s" repeatCount="indefinite" />
+      </path>
     </g>
     <g transform="translate(208,58)" stroke="#111827" strokeWidth="2" fill="none" strokeLinecap="round">
       <circle cx="20" cy="8" r="6" />
