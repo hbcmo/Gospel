@@ -45,16 +45,24 @@ const BrokenHeartIcon = () => (
 
 // Cross icon for Jesus
 const CrossIcon = () => (
-  <svg viewBox="0 0 100 140" className="w-12 h-20 mx-auto mb-2">
+  <svg viewBox="0 0 100 120" className="w-16 h-24 mx-auto mb-4">
     <defs>
       <linearGradient id="woodGradient" x1="0%" y1="0%" x2="100%" y2="0%">
         <stop offset="0%" stopColor="#8b4513" />
         <stop offset="50%" stopColor="#a0522d" />
         <stop offset="100%" stopColor="#8b4513" />
       </linearGradient>
+      <radialGradient id="glowGradient">
+        <stop offset="0%" stopColor="#fef3c7" stopOpacity="0.8" />
+        <stop offset="100%" stopColor="#fef3c7" stopOpacity="0" />
+      </radialGradient>
     </defs>
-    <rect x="44" y="5" width="12" height="130" rx="1" fill="url(#woodGradient)" stroke="#654321" strokeWidth="1.5" />
-    <rect x="20" y="35" width="60" height="12" rx="1" fill="url(#woodGradient)" stroke="#654321" strokeWidth="1.5" />
+    <ellipse cx="50" cy="60" rx="45" ry="50" fill="url(#glowGradient)" />
+    <rect x="42" y="10" width="16" height="100" rx="2" fill="url(#woodGradient)" stroke="#654321" strokeWidth="2" />
+    <rect x="20" y="30" width="60" height="16" rx="2" fill="url(#woodGradient)" stroke="#654321" strokeWidth="2" />
+    <circle cx="50" cy="38" r="2" fill="#1f2937" />
+    <path d="M 42 80 L 44 85 L 46 80" stroke="#654321" strokeWidth="1" fill="none" />
+    <path d="M 54 80 L 56 85 L 58 80" stroke="#654321" strokeWidth="1" fill="none" />
   </svg>
 );
 
@@ -133,11 +141,12 @@ const JesusScene = () => (
       <path d="M 210 120 L 320 120 L 320 160 L 180 160 Z" />
       <path d="M 0 160 L 320 160" />
     </g>
-    <g stroke="#8b4513" strokeWidth="4" fill="none" strokeLinecap="round">
-      <path d="M 160 70 L 160 180">
+    {/* Brown cross bridge connecting God and Man */}
+    <g stroke="#8b4513" strokeWidth="5" fill="none" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M 160 80 L 160 160">
         <animate attributeName="opacity" values="1;0.7;1" dur="3s" repeatCount="indefinite" />
       </path>
-      <path d="M 110 110 L 210 110">
+      <path d="M 110 120 L 210 120">
         <animate attributeName="opacity" values="1;0.7;1" dur="3s" repeatCount="indefinite" />
       </path>
     </g>
