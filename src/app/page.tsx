@@ -650,7 +650,6 @@ export default function Page() {
                 {/* Page 1: Three Steps */}
                 {stagePage === 1 && (
                   <div className="space-y-4 flex flex-col flex-1">
-                    <StepsScene />
                     <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">Three Steps</h2>
                     <div className="w-16 h-1 bg-green-800 mx-auto"></div>
                     
@@ -702,7 +701,6 @@ export default function Page() {
                 {/* Page 0: Prayer Text */}
                 {stagePage === 0 && (
                   <div className="space-y-4 flex flex-col flex-1">
-                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">Prayer of Salvation</h2>
                     <div className="w-16 h-1 bg-amber-800 mx-auto"></div>
 
                     <p className="text-lg sm:text-xl font-serif text-gray-700 leading-relaxed italic flex-1">
