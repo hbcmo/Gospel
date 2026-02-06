@@ -22,7 +22,7 @@ const GodScene = () => (
       <path d="M 20 34 L 28 48" />
       <animateTransform attributeName="transform" type="translate" values="100,70; 100,72; 100,70" dur="2s" repeatCount="indefinite" />
     </g>
-    <text x="110" y="110" fontFamily="serif" fontSize="14" fill="#111827">Man</text>
+    <text x="135" y="110" fontFamily="serif" fontSize="14" fill="#111827">Man</text>
     <text x="200" y="110" fontFamily="serif" fontSize="14" fill="#111827">God</text>
     <text x="100" y="155" fontFamily="serif" fontSize="12" fill="#111827" opacity="0.6">Perfect Fellowship</text>
   </svg>
@@ -101,7 +101,7 @@ const InvitationScene = () => (
       <animateTransform attributeName="transform" type="translate" values="208,58; 208,60; 208,58" dur="2s" repeatCount="indefinite" />
     </g>
     <text x="18" y="112" fontFamily="serif" fontSize="14" fill="#111827">God</text>
-    <text x="230" y="112" fontFamily="serif" fontSize="14" fill="#111827">Man</text>
+    <text x="255" y="112" fontFamily="serif" fontSize="14" fill="#111827">Man</text>
     <text x="150" y="152" fontFamily="serif" fontSize="12" fill="#111827">Sin</text>
   </svg>
 );
@@ -281,6 +281,15 @@ export default function Page() {
                   className="px-8 py-3 bg-amber-900 text-amber-50 font-serif text-base sm:text-lg hover:bg-amber-800 transition-all shadow-lg flex items-center gap-2 mx-auto border-2 border-amber-950"
                 >
                   Yes, Let's Begin <ChevronRight />
+                </button>
+                <button
+                  onClick={() => {
+                    setStage('intro');
+                    setStagePage(0);
+                  }}
+                  className="px-8 py-3 bg-transparent text-amber-900 font-serif text-base sm:text-lg hover:bg-amber-50 transition-all shadow-sm mx-auto border-2 border-amber-300"
+                >
+                  Not right now
                 </button>
               </div>
             </div>
