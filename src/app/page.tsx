@@ -718,7 +718,6 @@ export default function Page() {
                 {/* Page 1: Next Steps */}
                 {stagePage === 1 && (
                   <div className="space-y-4 flex flex-col flex-1">
-                    <DiscipleshipScene />
                     <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">What Happens Next?</h2>
                     <div className="w-16 h-1 bg-green-800 mx-auto"></div>
                     
