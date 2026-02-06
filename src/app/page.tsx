@@ -151,6 +151,7 @@ export default function Page() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [audioEnabled, setAudioEnabled] = useState(false);
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({});
+  const [showNotReady, setShowNotReady] = useState(false);
 
   const nextStage = () => {
     const stages: Stage[] = ['intro', 'god', 'man', 'jesus', 'invitation', 'prayer'];
@@ -195,6 +196,12 @@ export default function Page() {
       audioRef.current.pause();
     }
   }, [audioEnabled]);
+
+  useEffect(() => {
+    if (stage !== 'invitation' || stagePage !== 0) {
+      setShowNotReady(false);
+    }
+  }, [stage, stagePage]);
 
   const toggleAudio = () => {
     if (audioRef.current) {
@@ -529,14 +536,33 @@ export default function Page() {
                       <p className="text-lg text-green-800 mt-3 font-serif">— Romans 10:9</p>
                     </div>
                     <button
-                      onClick={() => {
-                        setStage('intro');
-                        setStagePage(0);
-                      }}
+                      onClick={() => setShowNotReady(prev => !prev)}
                       className="px-8 py-3 bg-transparent text-green-900 font-serif text-base sm:text-lg hover:bg-green-50 transition-all shadow-sm mx-auto border-2 border-green-300"
                     >
                       Not right now
                     </button>
+                    {showNotReady && (
+                      <div className="bg-green-50 border-2 border-green-200 p-4 space-y-3 font-serif text-gray-800">
+                        <p className="text-lg sm:text-xl font-bold text-green-900">That’s okay. Here are a few next steps:</p>
+                        <ul className="list-disc pl-6 space-y-2 text-lg sm:text-xl">
+                          <li>Talk with a trusted friend, pastor, or family member.</li>
+                          <li>Read John 3 or Romans 10 and ask God to help you understand.</li>
+                          <li>Pray honestly—tell God what you’re thinking and feeling.</li>
+                          <li>Come back when you’re ready to receive Christ.</li>
+                        </ul>
+                        <div className="pt-2">
+                          <button
+                            onClick={() => {
+                              setStage('intro');
+                              setStagePage(0);
+                            }}
+                            className="px-6 py-2 bg-white text-green-900 font-serif border-2 border-green-300 hover:bg-green-100 transition-all"
+                          >
+                            Back to start
+                          </button>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
 
