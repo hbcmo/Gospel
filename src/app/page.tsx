@@ -282,15 +282,6 @@ export default function Page() {
                 >
                   Yes, Let's Begin <ChevronRight />
                 </button>
-                <button
-                  onClick={() => {
-                    setStage('intro');
-                    setStagePage(0);
-                  }}
-                  className="px-8 py-3 bg-transparent text-amber-900 font-serif text-base sm:text-lg hover:bg-amber-50 transition-all shadow-sm mx-auto border-2 border-amber-300"
-                >
-                  Not right now
-                </button>
               </div>
             </div>
           </div>
@@ -537,6 +528,15 @@ export default function Page() {
                       </p>
                       <p className="text-lg text-green-800 mt-3 font-serif">— Romans 10:9</p>
                     </div>
+                    <button
+                      onClick={() => {
+                        setStage('intro');
+                        setStagePage(0);
+                      }}
+                      className="px-8 py-3 bg-transparent text-green-900 font-serif text-base sm:text-lg hover:bg-green-50 transition-all shadow-sm mx-auto border-2 border-green-300"
+                    >
+                      Not right now
+                    </button>
                   </div>
                 )}
 
