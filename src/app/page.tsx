@@ -5,119 +5,8 @@ import { ChevronRight, Heart } from 'lucide-react';
 
 type Stage = 'intro' | 'god' | 'man' | 'jesus' | 'invitation' | 'prayer';
 
-// Crown icon for God's sovereignty
-const CrownIcon = () => (
-  <svg viewBox="0 0 100 80" className="w-12 h-10 mx-auto mb-2">
-    <defs>
-      <linearGradient id="goldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stopColor="#ffd700" />
-        <stop offset="50%" stopColor="#ffed4e" />
-        <stop offset="100%" stopColor="#d4af37" />
-      </linearGradient>
-    </defs>
-    <path d="M 10 60 L 20 30 L 35 45 L 50 15 L 65 45 L 80 30 L 90 60 Z" fill="url(#goldGradient)" stroke="#b8860b" strokeWidth="2" />
-    <circle cx="20" cy="30" r="5" fill="#ff4444" stroke="#cc0000" strokeWidth="1" />
-    <circle cx="50" cy="15" r="6" fill="#ff4444" stroke="#cc0000" strokeWidth="1" />
-    <circle cx="80" cy="30" r="5" fill="#ff4444" stroke="#cc0000" strokeWidth="1" />
-    <rect x="10" y="60" width="80" height="12" rx="2" fill="url(#goldGradient)" stroke="#b8860b" strokeWidth="2" />
-    <circle cx="30" cy="66" r="3" fill="#ff4444" />
-    <circle cx="50" cy="66" r="3" fill="#ff4444" />
-    <circle cx="70" cy="66" r="3" fill="#ff4444" />
-  </svg>
-);
-
-// Broken heart icon for sin
-const BrokenHeartIcon = () => (
-  <svg viewBox="0 0 100 100" className="w-12 h-12 mx-auto mb-2">
-    <defs>
-      <linearGradient id="heartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stopColor="#dc2626" />
-        <stop offset="100%" stopColor="#991b1b" />
-      </linearGradient>
-    </defs>
-    <path d="M 50 85 L 20 55 Q 10 45 10 32 Q 10 20 20 15 Q 30 10 38 18 L 45 25" fill="url(#heartGradient)" stroke="#7f1d1d" strokeWidth="2" />
-    <path d="M 50 85 L 80 55 Q 90 45 90 32 Q 90 20 80 15 Q 70 10 62 18 L 55 25" fill="url(#heartGradient)" stroke="#7f1d1d" strokeWidth="2" />
-    <path d="M 45 25 L 48 55 L 52 55 L 55 25" fill="none" stroke="#1f2937" strokeWidth="4" strokeLinecap="round" />
-    <path d="M 45 25 L 35 40" stroke="#1f2937" strokeWidth="3" strokeLinecap="round" />
-    <path d="M 55 25 L 65 40" stroke="#1f2937" strokeWidth="3" strokeLinecap="round" />
-  </svg>
-);
-
-// Cross icon for Jesus
-const CrossIcon = () => (
-  <svg viewBox="0 0 100 120" className="w-16 h-24 mx-auto mb-4">
-    <defs>
-      <linearGradient id="woodGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#8b4513" />
-        <stop offset="50%" stopColor="#a0522d" />
-        <stop offset="100%" stopColor="#8b4513" />
-      </linearGradient>
-      <radialGradient id="glowGradient">
-        <stop offset="0%" stopColor="#fef3c7" stopOpacity="0.8" />
-        <stop offset="100%" stopColor="#fef3c7" stopOpacity="0" />
-      </radialGradient>
-    </defs>
-    <ellipse cx="50" cy="60" rx="45" ry="50" fill="url(#glowGradient)" />
-    <rect x="42" y="10" width="16" height="100" rx="2" fill="url(#woodGradient)" stroke="#654321" strokeWidth="2" />
-    <rect x="20" y="30" width="60" height="16" rx="2" fill="url(#woodGradient)" stroke="#654321" strokeWidth="2" />
-    <circle cx="50" cy="38" r="2" fill="#1f2937" />
-    <path d="M 42 80 L 44 85 L 46 80" stroke="#654321" strokeWidth="1" fill="none" />
-    <path d="M 54 80 L 56 85 L 58 80" stroke="#654321" strokeWidth="1" fill="none" />
-  </svg>
-);
-
-// Open door icon for invitation
-const OpenDoorIcon = () => (
-  <svg viewBox="0 0 100 120" className="w-12 h-20 mx-auto mb-2">
-    <defs>
-      <linearGradient id="doorGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#92400e" />
-        <stop offset="50%" stopColor="#b45309" />
-        <stop offset="100%" stopColor="#92400e" />
-      </linearGradient>
-      <linearGradient id="lightGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#fef3c7" stopOpacity="0" />
-        <stop offset="50%" stopColor="#fef3c7" stopOpacity="0.9" />
-        <stop offset="100%" stopColor="#fef3c7" stopOpacity="0" />
-      </linearGradient>
-    </defs>
-    <rect x="25" y="10" width="50" height="100" rx="3" fill="#78350f" stroke="#451a03" strokeWidth="2" />
-    <path d="M 75 10 Q 85 15 90 60 Q 85 105 75 110" fill="url(#doorGradient)" stroke="#451a03" strokeWidth="2" />
-    <rect x="75" y="10" width="20" height="100" fill="url(#lightGradient)" />
-    <circle cx="70" cy="60" r="3" fill="#fbbf24" stroke="#f59e0b" strokeWidth="1" />
-    <path d="M 30 20 L 70 20 M 30 40 L 70 40 M 30 60 L 70 60 M 30 80 L 70 80 M 30 100 L 70 100" stroke="#451a03" strokeWidth="1" opacity="0.3" />
-  </svg>
-);
 
 // Scene illustrations for each stage
-// Intro scene - hands reaching toward light
-const IntroScene = () => (
-  <svg viewBox="0 0 320 200" className="w-full max-w-2xl max-h-32 mx-auto mb-2">
-    <defs>
-      <radialGradient id="introLight">
-        <stop offset="0%" stopColor="#fef3c7" />
-        <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.3" />
-      </radialGradient>
-    </defs>
-    <circle cx="160" cy="60" r="50" fill="url(#introLight)" />
-    <circle cx="160" cy="60" r="45" fill="none" stroke="#fbbf24" strokeWidth="2" opacity="0.6" />
-    <g transform="translate(80,120)" stroke="#111827" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="0" cy="0" r="4" />
-      <path d="M 0 0 L 0 -30" />
-      <path d="M -8 -10 L 0 -30 L 8 -10" />
-      <path d="M 0 0 L -8 10" />
-      <path d="M 0 0 L 8 10" />
-    </g>
-    <g transform="translate(240,120)" stroke="#111827" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="0" cy="0" r="4" />
-      <path d="M 0 0 L 0 -30" />
-      <path d="M -8 -10 L 0 -30 L 8 -10" />
-      <path d="M 0 0 L -8 10" />
-      <path d="M 0 0 L 8 10" />
-    </g>
-    <text x="160" y="180" fontFamily="serif" fontSize="14" fill="#111827" textAnchor="middle">The Gospel Message</text>
-  </svg>
-);
 
 const GodScene = () => (
   <svg viewBox="0 0 320 180" className="w-full max-w-2xl max-h-32 mx-auto mb-2">
@@ -379,7 +268,6 @@ export default function Page() {
           <div className="text-center space-y-4 animate-fade-in">
             <div className="max-w-3xl mx-auto bg-white border-4 border-amber-900 shadow-2xl p-4 sm:p-6 rounded-sm">
               <div className="space-y-3">
-                <IntroScene />
                 <PreacherAvatar />
                 <h1 className="text-2xl sm:text-4xl font-serif font-bold text-amber-950">Hey there, friend</h1>
                 <p className="text-base sm:text-lg text-gray-700 font-serif leading-relaxed">
@@ -408,7 +296,6 @@ export default function Page() {
                 {stagePage === 0 && (
                   <div className="space-y-4 flex flex-col flex-1">
                     <GodScene />
-                    <CrownIcon />
                     <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">Who is God?</h2>
                     <div className="w-16 h-1 bg-amber-800 mx-auto"></div>
                     
@@ -425,7 +312,6 @@ export default function Page() {
                 {/* Page 1: Scripture and Attributes */}
                 {stagePage === 1 && (
                   <div className="space-y-4 flex flex-col flex-1">
-                    <CrownIcon />
                     <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">God's Attributes</h2>
                     <div className="w-16 h-1 bg-amber-800 mx-auto"></div>
                     
@@ -483,7 +369,6 @@ export default function Page() {
                 {stagePage === 0 && (
                   <div className="space-y-4 flex flex-col flex-1">
                     <ManScene />
-                    <BrokenHeartIcon />
                     <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">Who is Man?</h2>
                     <div className="w-16 h-1 bg-amber-800 mx-auto"></div>
 
@@ -557,7 +442,6 @@ export default function Page() {
                 {stagePage === 0 && (
                   <div className="space-y-4 flex flex-col flex-1">
                     <JesusScene />
-                    <CrossIcon />
                     <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">Who is Jesus?</h2>
                     <div className="w-16 h-1 bg-blue-800 mx-auto"></div>
 
@@ -630,7 +514,7 @@ export default function Page() {
                 {/* Page 0: Intro */}
                 {stagePage === 0 && (
                   <div className="space-y-4 flex flex-col flex-1">
-                    <OpenDoorIcon />
+                    <InvitationScene />
                     <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center text-amber-950">Will You Receive Christ?</h2>
                     <div className="w-16 h-1 bg-green-800 mx-auto"></div>
 
@@ -701,6 +585,7 @@ export default function Page() {
                 {/* Page 0: Prayer Text */}
                 {stagePage === 0 && (
                   <div className="space-y-4 flex flex-col flex-1">
+                    <PrayerScene />
                     <div className="w-16 h-1 bg-amber-800 mx-auto"></div>
 
                     <p className="text-lg sm:text-xl font-serif text-gray-700 leading-relaxed italic flex-1">
