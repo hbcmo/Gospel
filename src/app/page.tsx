@@ -649,15 +649,26 @@ export default function Page() {
                       <p className="text-lg sm:text-xl"><strong className="text-green-900">5.</strong> Share your faith</p>
                     </div>
 
-                    <div className="pt-2">
-                      <a 
-                        href="https://www.9marks.org/church-search/" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="block text-center px-6 py-3 bg-green-700 text-white font-serif font-semibold hover:bg-green-800 transition-all rounded text-lg"
-                      >
-                        Find a Gospel-Centered Church
-                      </a>
+                    <div className="pt-2 space-y-3">
+                      <p className="text-center text-lg font-serif font-semibold text-gray-800">Find a Church Near You:</p>
+                      <div className="flex flex-col sm:flex-row gap-3">
+                        <a 
+                          href="https://www.9marks.org/church-search/" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex-1 text-center px-6 py-3 bg-green-700 text-white font-serif font-semibold hover:bg-green-800 transition-all rounded text-base sm:text-lg"
+                        >
+                          9Marks Church Search
+                        </a>
+                        <a 
+                          href="https://churches.sbc.net" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex-1 text-center px-6 py-3 bg-green-700 text-white font-serif font-semibold hover:bg-green-800 transition-all rounded text-base sm:text-lg"
+                        >
+                          SBC Church Finder
+                        </a>
+                      </div>
                     </div>
                   </div>
                 )}
