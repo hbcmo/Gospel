@@ -590,7 +590,7 @@ export default function Page() {
                       ← Back
                     </button>
                   )}
-                  {stagePage < 1 && (
+                  {stagePage < 1 && !showNotReady && (
                     <button
                       onClick={nextPage}
                       className="flex-1 px-6 py-3 bg-green-900 hover:bg-green-800 text-green-50 font-serif transition-all border-2 border-green-950"
